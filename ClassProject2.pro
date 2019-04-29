@@ -32,9 +32,18 @@ SOURCES += \
     guestdialog.cpp
 
 HEADERS += \
+    ellipse.h \
+    fillableshape.h \
+    line.h \
         mainwindow.h \
-    vector.h \
+    nonfillableshape.h \
+    polygon.h \
+    polyline.h \
+    properties.h \
+    rectangle.h \
     shape.h \
+    text.h \
+    vector.h \
     admindialog.h \
     guestdialog.h
 
