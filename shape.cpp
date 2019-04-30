@@ -4,6 +4,10 @@ Shape::Shape(const QPoint& pos, unsigned int ID) : topL{pos}, id{ID}
 {
 }
 
+Shape::~Shape()
+{
+}
+
 QPoint Shape::getPosition() const
 {
     return topL;

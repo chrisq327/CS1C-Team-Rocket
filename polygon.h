@@ -7,9 +7,9 @@
 class Polygon : public fillableShape
 {
 public:
-    Polygon(const myStd::vector<QPoint>&, fillProperties, borderProperties);
+    Polygon(const myStd::vector<QPoint>&, unsigned int, fillProperties, borderProperties);
 
-    void draw() override;
+    void draw(QPainter&) override;
 
     myStd::vector<QPoint> getPoints() const;
 

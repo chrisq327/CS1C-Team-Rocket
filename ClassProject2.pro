@@ -31,6 +31,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     nonfillableshapes.cpp \
+    polygon.cpp \
     shape.cpp \
     admindialog.cpp \
     guestdialog.cpp
