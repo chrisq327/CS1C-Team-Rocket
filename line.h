@@ -6,16 +6,16 @@
 class Line : public nonfillableShape
 {
 public:
-    Line(QPoint, QPoint, borderProperties);
-    Line(int, int, int, int);
+    Line(const QPoint&, const QPoint&, unsigned int, borderProperties);
+    Line(int, int, int, int, unsigned int, borderProperties);
 
-    void draw() override;
+    void draw(QPainter&) override;
 
     QPoint getStart();
     QPoint getEnd();
 
-    void setStart(QPoint);
-    void setEnd(QPoint);
+    void setStart(const QPoint&);
+    void setEnd(const QPoint&);
 private:
     QPoint start;
     QPoint end;

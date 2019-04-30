@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
     ellipse.cpp \
     fillableshape.cpp \
+    line.cpp \
         main.cpp \
         mainwindow.cpp \
     nonfillableshapes.cpp \
