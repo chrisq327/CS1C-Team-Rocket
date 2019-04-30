@@ -7,9 +7,15 @@
 class nonfillableShape : public Shape
 {
 public:
-    nonfillableShape(QPoint, borderProperties);
-private:
+    nonfillableShape(const QPoint&, unsigned int, borderProperties);
+
+    borderProperties getBorderProperties() const;
+
+    void setBorderProperties(borderProperties);
+protected:
     borderProperties borderProps;
+    fillProperties fillProps;
+    virtual void applyProperties(QPainter&) const;
 };
 
 #endif // NONFILLABLESHAPE_H

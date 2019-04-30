@@ -8,6 +8,7 @@
 #include <QBrush>
 #include <QtGui>
 #include <QtCore>
+#include <QRect>
 
 class Shape
 {

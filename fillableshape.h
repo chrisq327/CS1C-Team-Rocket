@@ -7,14 +7,17 @@
 class fillableShape : public Shape
 {
 public:
-    fillableShape(QPoint, fillProperties, borderProperties);
+    fillableShape(const QPoint&, unsigned int, fillProperties, borderProperties);
 
     fillProperties getFillProperties();
+    borderProperties getBorderProperties();
 
     void setFillProperties(fillProperties);
-private:
+    void setBorderProperties(borderProperties);
+protected:
     fillProperties fillProps;
     borderProperties borderProps;
+    virtual void applyProperties(QPainter&) const;
 };
 
 #endif // FILLABLESHAPE_H

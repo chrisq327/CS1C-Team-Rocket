@@ -1,11 +1,20 @@
 #include "shape.h"
 
-Shape::Shape()
+Shape::Shape(const QPoint& pos, unsigned int ID) : topL{pos}, id{ID}
 {
-
 }
 
-void Line::Draw()
+QPoint Shape::getPosition() const
 {
-    //this->painter.drawLine(this->point1, this->point2);
+    return topL;
+}
+
+unsigned int Shape::getId() const
+{
+    return id;
+}
+
+void Shape::setPosition(const QPoint& point)
+{
+    topL = point;
 }

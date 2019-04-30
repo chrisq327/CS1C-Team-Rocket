@@ -25,8 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    ellipse.cpp \
+    fillableshape.cpp \
         main.cpp \
         mainwindow.cpp \
+    nonfillableshapes.cpp \
     shape.cpp \
     admindialog.cpp \
     guestdialog.cpp
