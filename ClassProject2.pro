@@ -31,6 +31,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     nonfillableshapes.cpp \
+    parser.cpp \
     polygon.cpp \
     polyline.cpp \
     shape.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     line.h \
         mainwindow.h \
     nonfillableshape.h \
+    parser.h \
     polygon.h \
     polyline.h \
     properties.h \
