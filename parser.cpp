@@ -3,7 +3,21 @@
 //using namespace myStd;
 
 #include "parser.h"
+#include "properties.h"
+#include "line.h"
 
+void setPenColor(borderProperties &bProp, string color);
+void setPenStyle(borderProperties &bProp, string penStyle);
+void setPenCapStyle(borderProperties &bProp, string penCap);
+void setPenJoinStlye(borderProperties &bProp, string joinStyle);
+
+void setBrushColor(fillProperties &fProp, string color);
+void setBrushStyle(fillProperties &fProp, string brushStyle);
+
+void setTextColor(textProperties &tProp, string textColor);
+void setTextAlignment(textProperties &tProp, string textAlign);
+void setTextStyle(textProperties &tProp, string textStyle);
+void setTextWeight(textProperties &tProp, string textWeight);
 
 
 void parser()
@@ -298,7 +312,262 @@ int convert(string s)
 }
 
 
+void setPenColor(borderProperties &bProp, string penColor)
+{
+    if(penColor == "white")
+    {
+        bProp.penColor = Qt::GlobalColor::white;
+    }
+    else if(penColor == "black")
+    {
+        bProp.penColor = Qt::GlobalColor::black;
+    }
+    else if(penColor == "red")
+    {
+        bProp.penColor = Qt::GlobalColor::red;
+    }
+    else if(penColor == "green")
+    {
+        bProp.penColor = Qt::GlobalColor::green;
+    }
+    else if(penColor == "blue")
+    {
+        bProp.penColor = Qt::GlobalColor::blue;
+    }
+    else if(penColor == "cyan")
+    {
+        bProp.penColor = Qt::GlobalColor::cyan;
+    }
+    else if(penColor == "magenta")
+    {
+        bProp.penColor = Qt::GlobalColor::magenta;
+    }
+    else if(penColor == "yellow")
+    {
+        bProp.penColor = Qt::GlobalColor::yellow;
+    }
+    else if(penColor == "gray")
+    {
+        bProp.penColor = Qt::GlobalColor::black;
+    }
 
+}
+void setPenStyle(borderProperties &bProp, string penStyle)
+{
+    if(penStyle == "NoPen")
+    {
+        bProp.penStyle = Qt::PenStyle::NoPen;
+    }
+    else if(penStyle == "SolidLine")
+    {
+        bProp.penStyle = Qt::PenStyle::SolidLine;
+    }
+    else if(penStyle == "DashLine")
+    {
+        bProp.penStyle = Qt::PenStyle::DashLine;
+    }
+    else if(penStyle == "DotLine")
+    {
+        bProp.penStyle = Qt::PenStyle::DotLine;
+    }
+    else if(penStyle == "DashDotLine")
+    {
+        bProp.penStyle = Qt::PenStyle::DashDotLine;
+    }
+    else if(penStyle == "DashDotDotLine")
+    {
+        bProp.penStyle = Qt::PenStyle::DashDotDotLine;
+    }
+
+}
+void setPenCapStyle(borderProperties &bProp, string penCap)
+{
+    if(penCap == "FlatCap")
+    {
+        bProp.penCapStyle = Qt::PenCapStyle::FlatCap;
+    }
+    else if(penCap == "SquareCap")
+    {
+        bProp.penCapStyle = Qt::PenCapStyle::SquareCap;
+    }
+    else if(penCap == "RoundCap")
+    {
+        bProp.penCapStyle = Qt::PenCapStyle::RoundCap;
+    }
+
+
+}
+void setPenJoinStlye(borderProperties &bProp, string joinStyle)
+{
+    if(joinStyle == "MiterJoin")
+    {
+        bProp.penJoinStyle = Qt::PenJoinStyle::MiterJoin;
+    }
+    else if(joinStyle == "BevelJoin")
+    {
+        bProp.penJoinStyle = Qt::PenJoinStyle::BevelJoin;
+    }
+    else if(joinStyle == "RoundJoin")
+    {
+        bProp.penJoinStyle = Qt::PenJoinStyle::RoundJoin;
+    }
+}
+
+void setBrushColor(fillProperties &fProp, string brushColor)
+{
+    if(brushColor == "white")
+    {
+        fProp.brushColor = Qt::GlobalColor::white;
+    }
+    else if(brushColor == "black")
+    {
+        fProp.brushColor = Qt::GlobalColor::black;
+    }
+    else if(brushColor == "red")
+    {
+        fProp.brushColor = Qt::GlobalColor::red;
+    }
+    else if(brushColor == "green")
+    {
+        fProp.brushColor = Qt::GlobalColor::green;
+    }
+    else if(brushColor == "blue")
+    {
+        fProp.brushColor = Qt::GlobalColor::blue;
+    }
+    else if(brushColor == "cyan")
+    {
+        fProp.brushColor = Qt::GlobalColor::cyan;
+    }
+    else if(brushColor == "magenta")
+    {
+        fProp.brushColor = Qt::GlobalColor::magenta;
+    }
+    else if(brushColor == "yellow")
+    {
+        fProp.brushColor = Qt::GlobalColor::yellow;
+    }
+    else if(brushColor == "gray")
+    {
+        fProp.brushColor = Qt::GlobalColor::black;
+    }
+}
+void setBrushStyle(fillProperties &fProp, string brushStyle)
+{
+    if(brushStyle == "SolidPattern")
+    {
+        fProp.brushStyle = Qt::BrushStyle::SolidPattern;
+    }
+    else if(brushStyle == "HorPattern")
+    {
+        fProp.brushStyle = Qt::BrushStyle::HorPattern;
+    }
+    else if(brushStyle == "VerPattern")
+    {
+        fProp.brushStyle = Qt::BrushStyle::VerPattern;
+    }
+    else if(brushStyle == "NoBrush")
+    {
+        fProp.brushStyle = Qt::BrushStyle::NoBrush;
+    }
+}
+
+void setTextColor(textProperties &tProp, string textColor)
+{
+    if(textColor == "white")
+    {
+        tProp.textColor = Qt::GlobalColor::white;
+    }
+    else if(textColor == "black")
+    {
+        tProp.textColor = Qt::GlobalColor::black;
+    }
+    else if(textColor == "red")
+    {
+        tProp.textColor = Qt::GlobalColor::red;
+    }
+    else if(textColor == "green")
+    {
+        tProp.textColor = Qt::GlobalColor::green;
+    }
+    else if(textColor == "blue")
+    {
+        tProp.textColor = Qt::GlobalColor::blue;
+    }
+    else if(textColor == "cyan")
+    {
+        tProp.textColor = Qt::GlobalColor::cyan;
+    }
+    else if(textColor == "magenta")
+    {
+        tProp.textColor = Qt::GlobalColor::magenta;
+    }
+    else if(textColor == "yellow")
+    {
+        tProp.textColor = Qt::GlobalColor::yellow;
+    }
+    else if(textColor == "gray")
+    {
+        tProp.textColor = Qt::GlobalColor::black;
+    }
+}
+void setTextAlignment(textProperties &tProp, string textAlign)
+{
+    if(textAlign == "AlignLeft")
+    {
+        tProp.textAlignment = Qt::AlignmentFlag::AlignLeft;
+    }
+    else if(textAlign == "AlignRight")
+    {
+        tProp.textAlignment = Qt::AlignmentFlag::AlignRight;
+    }
+    else if(textAlign == "AlrightTop")
+    {
+        tProp.textAlignment = Qt::AlignmentFlag::AlignTop;
+    }
+    else if(textAlign == "AlignBottom")
+    {
+        tProp.textAlignment = Qt::AlignmentFlag::AlignBottom;
+    }
+    else if(textAlign == "AlignCenter")
+    {
+        tProp.textAlignment = Qt::AlignmentFlag::AlignCenter;
+    }
+}
+void setTextStyle(textProperties &tProp, string textStyle)
+{
+    if(textStyle == "StyleNormal")
+    {
+        tProp.textFontStyle = QFont::Style::StyleNormal;
+    }
+    else if(textStyle == "StyleItalic")
+    {
+        tProp.textFontStyle = QFont::Style::StyleItalic;
+    }
+    else if(textStyle == "StyleOblique")
+    {
+        tProp.textFontStyle = QFont::Style::StyleOblique;
+    }
+}
+void setTextWeight(textProperties &tProp, string textWeight)
+{
+    if(textWeight == "Thin")
+    {
+        tProp.textFontWeight = QFont::Weight::Thin;
+    }
+    else if(textWeight == "Light")
+    {
+        tProp.textFontWeight = QFont::Weight::Light;
+    }
+    else if(textWeight == "Normal")
+    {
+        tProp.textFontWeight = QFont::Weight::Normal;
+    }
+    else if(textWeight == "Bold")
+    {
+        tProp.textFontWeight = QFont::Weight::Bold;
+    }
+}
 
 
 
