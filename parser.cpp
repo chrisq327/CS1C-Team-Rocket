@@ -5,6 +5,12 @@
 #include "parser.h"
 #include "properties.h"
 #include "line.h"
+#include "polyline.h"
+#include "polygon.h"
+#include "rectangle.h"
+#include "ellipse.h"
+#include "text.h"
+
 
 void setPenColor(borderProperties &bProp, string color);
 void setPenStyle(borderProperties &bProp, string penStyle);
@@ -16,6 +22,7 @@ void setBrushStyle(fillProperties &fProp, string brushStyle);
 
 void setTextColor(textProperties &tProp, string textColor);
 void setTextAlignment(textProperties &tProp, string textAlign);
+void setTextFontFamily(textProperties &tProp, string textFont);
 void setTextStyle(textProperties &tProp, string textStyle);
 void setTextWeight(textProperties &tProp, string textWeight);
 
@@ -214,72 +221,165 @@ void parser()
 				break;
 		}
 
-		if(enumPos == 7)
-			{
-				cout << id << endl;
-				cout << shapeType << endl;
-				cout << d1 << ", " << d2 << ", " << d3 << ", " << d4 << endl;
-				cout << textString << endl;
-				cout << textColor << endl;
-				cout << textAlign << endl;
-				cout << textSize << endl;
-				cout << textFontFamily << endl;
-				cout << textFontStyle << endl;
-				cout << textFontWeight << endl;
-			}
-			else if(enumPos == 1)
-			{
-				cout << id << endl;
-				cout << shapeType << endl;
-				cout << d1 << ", " << d2 << ", " << d3 << ", " << d4 <<
-						d5 << ", " << d6 << ", " << d7 << ", " << d8 << endl;
-				cout << penColor << endl;
-				cout << penWidth << endl;
-				cout << penStyle << endl;
-				cout << penCapStyle << endl;
-				cout << penJoinStyle << endl;
+        if(enumPos == 0)
+        {
+            borderProperties bProp;
 
-			}
-			else if(enumPos > 1 && enumPos < 3)
-			{
-				cout << id << endl;
-				cout << shapeType << endl;
-				cout << d1 << ", " << d2 << ", " << d3 << ", " << d4 <<
-						d5 << ", " << d6 << ", " << d7 << ", " << d8 << endl;
-				cout << penColor << endl;
-				cout << penWidth << endl;
-				cout << penStyle << endl;
-				cout << penCapStyle << endl;
-				cout << penJoinStyle << endl;
-				cout << brushColor << endl;
-				cout << brushStyle << endl;
-			}
-			else if(enumPos == 4 || enumPos == 6)
-			{
-				cout << id << endl;
-				cout << shapeType << endl;
-				cout << d1 << ", " << d2 << ", " << d3 << endl;
-				cout << penColor << endl;
-				cout << penWidth << endl;
-				cout << penStyle << endl;
-				cout << penCapStyle << endl;
-				cout << penJoinStyle << endl;
-				cout << brushColor << endl;
-				cout << brushStyle << endl;
-			}
-			else
-			{
-				cout << id << endl;
-				cout << shapeType << endl;
-				cout << d1 << ", " << d2 << ", " << d3 << ", " << d4 << endl;
-				cout << penColor << endl;
-				cout << penWidth << endl;
-				cout << penStyle << endl;
-				cout << penCapStyle << endl;
-				cout << penJoinStyle << endl;
-				cout << brushColor << endl;
-				cout << brushStyle << endl;
-			}
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            QPoint p1(d1, d2);
+            QPoint p2(d3, d4);
+
+            Line *newLine = new Line(p1, p2, id, bProp);
+        }
+        else if(enumPos == 1)
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            QPoint p1(d1, d2);
+            QPoint p2(d3, d4);
+            QPoint p3(d5, d6);
+            QPoint p4(d7, d8);
+
+            myStd::vector<QPoint> *polylinePoints;
+            polylinePoints->push_back(p1);
+            polylinePoints->push_back(p2);
+            polylinePoints->push_back(p3);
+            polylinePoints->push_back(p4);
+
+            Polyline *newPolyline = new Polyline(*polylinePoints, id, bProp);
+        }
+        else if(enumPos == 2)
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            fillProperties fProp;
+
+            setBrushColor(fProp, brushColor);
+            setBrushStyle(fProp, brushStyle);
+
+            QPoint p1(d1, d2);
+            QPoint p2(d3, d4);
+            QPoint p3(d5, d6);
+            QPoint p4(d7, d8);
+
+            myStd::vector<QPoint> *polygonPoints;
+            polygonPoints->push_back(p1);
+            polygonPoints->push_back(p2);
+            polygonPoints->push_back(p3);
+            polygonPoints->push_back(p4);
+
+            Polygon *newPolygon = new Polygon(*polygonPoints, id, fProp, bProp);
+        }
+        else if(enumPos == 3 )
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            fillProperties fProp;
+
+            setBrushColor(fProp, brushColor);
+            setBrushStyle(fProp, brushStyle);
+
+            QPoint p1(d1, d2);
+            QPoint p2(d3, d4);
+
+            Rectangle *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
+        }
+        else if(enumPos == 4)
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            fillProperties fProp;
+
+            setBrushColor(fProp, brushColor);
+            setBrushStyle(fProp, brushStyle);
+
+            QPoint p1(d1, d2);
+
+            Rectangle *newSquare = new Rectangle(p1, d3, id, fProp, bProp);
+        }
+        else if(enumPos == 5)
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            fillProperties fProp;
+
+            setBrushColor(fProp, brushColor);
+            setBrushStyle(fProp, brushStyle);
+
+            QPoint p1(d1, d2);
+            QPoint p2(d3, d4);
+
+            Ellipse *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
+        }
+        else if (enumPos == 6)
+        {
+            borderProperties bProp;
+
+            setPenColor(bProp, penColor);
+            bProp.penWidth = penWidth;
+            setPenStyle(bProp, penStyle);
+            setPenCapStyle(bProp, penCapStyle);
+            setPenJoinStlye(bProp, penJoinStyle);
+
+            fillProperties fProp;
+
+            setBrushColor(fProp, brushColor);
+            setBrushStyle(fProp, brushStyle);
+
+            QPoint p1(d1, d2);
+
+            Ellipse *newCircle = new Ellipse(p1, d3, id, fProp, bProp);
+        }
+        else if(enumPos == 7)
+        {
+            textProperties tProp;
+
+            setTextColor(tProp, textColor);
+            setTextAlignment(tProp, textAlign);
+            tProp.textSize = textSize;
+            setTextFontFamily(tProp, textFontFamily);
+            setTextStyle(tProp, textFontStyle);
+            setTextWeight(tProp, textFontWeight);
+
+            QPoint p1(d1, d2);
+
+            Text *newText = new Text(p1, d3, d4, textString, tProp);
+        }
 		cout << endl;
 	}
 	inFile.close();
@@ -532,6 +632,25 @@ void setTextAlignment(textProperties &tProp, string textAlign)
     else if(textAlign == "AlignCenter")
     {
         tProp.textAlignment = Qt::AlignmentFlag::AlignCenter;
+    }
+}
+void setTextFontFamily(textProperties &tProp, string textFont)
+{
+    if(textFont == "Comic Sans MS")
+    {
+        tProp.textFont = "Comic Sans MS";
+    }
+    else if(textFont == "Courier")
+    {
+        tProp.textFont = "Courier";
+    }
+    else if (textFont == "Helvetica")
+    {
+        tProp.textFont = "Helvetica";
+    }
+    else if(textFont == "Times New Roman")
+    {
+        tProp.textFont = "Times New Roman";
     }
 }
 void setTextStyle(textProperties &tProp, string textStyle)
