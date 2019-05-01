@@ -6,7 +6,7 @@
 class Rectangle : public fillableShape
 {
 public:
-    Rectangle(QPoint, QPoint, fillProperties, borderProperties);
+    Rectangle(QPoint, QPoint, int, fillProperties, borderProperties);
     Rectangle(QPoint, int, int, fillProperties, borderProperties);
 
     void draw() override;
