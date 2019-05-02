@@ -7,7 +7,7 @@
 class Text : public Shape
 {
 public:
-    Text(QPoint&, int, int, QString&, textProperties);
+    Text(const QPoint&, const QPoint&, unsigned int, QString&, textProperties);
 
     void draw(QPainter&) override;
 
@@ -15,6 +15,11 @@ public:
     int getWidth() const;
     int getHeight() const;
     textProperties getTextProps() const;
+    void applyProperties(QPainter&);
+
+    void setText(QString&);
+    void setWidth(int);
+    void setHeight(int);
 private:
     int width;
     int height;

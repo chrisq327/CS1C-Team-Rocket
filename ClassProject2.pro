@@ -37,7 +37,8 @@ SOURCES += \
     rectangle.cpp \
     shape.cpp \
     admindialog.cpp \
-    guestdialog.cpp
+    guestdialog.cpp \
+    text.cpp
 
 HEADERS += \
     ellipse.h \
