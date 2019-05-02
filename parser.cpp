@@ -10,6 +10,7 @@
 #include "rectangle.h"
 #include "ellipse.h"
 #include "text.h"
+#include "vector.h"
 
 
 void setPenColor(borderProperties &bProp, string color);
@@ -64,6 +65,7 @@ void parser()
 
 	while(!(inFile.eof()))
 	{
+        vector<Shape> *ourShapes = new vector<Shape>(8);
 
 		inFile >> trash;
 		inFile >> id;
@@ -234,7 +236,9 @@ void parser()
             QPoint p1(d1, d2);
             QPoint p2(d3, d4);
 
+            //Line newLine = new
             Line *newLine = new Line(p1, p2, id, bProp);
+            ourShapes->push_back(*newLine);
         }
         else if(enumPos == 1)
         {
@@ -258,6 +262,7 @@ void parser()
             polylinePoints->push_back(p4);
 
             Polyline *newPolyline = new Polyline(*polylinePoints, id, bProp);
+            ourShapes->push_back(*newPolyline);
         }
         else if(enumPos == 2)
         {
@@ -286,6 +291,7 @@ void parser()
             polygonPoints->push_back(p4);
 
             Polygon *newPolygon = new Polygon(*polygonPoints, id, fProp, bProp);
+            ourShapes->push_back(*newPolygon);
         }
         else if(enumPos == 3 )
         {
@@ -306,6 +312,7 @@ void parser()
             QPoint p2(d3, d4);
 
             Rectangle *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
+            ourShapes->push_back(*newRectangle);
         }
         else if(enumPos == 4)
         {
@@ -325,6 +332,7 @@ void parser()
             QPoint p1(d1, d2);
 
             Rectangle *newSquare = new Rectangle(p1, d3, id, fProp, bProp);
+            ourShapes->push_back(*newSquare);
         }
         else if(enumPos == 5)
         {
@@ -345,6 +353,7 @@ void parser()
             QPoint p2(d3, d4);
 
             Ellipse *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
+            ourShapes->push_back(*newEllipse);
         }
         else if (enumPos == 6)
         {
@@ -364,6 +373,7 @@ void parser()
             QPoint p1(d1, d2);
 
             Ellipse *newCircle = new Ellipse(p1, d3, id, fProp, bProp);
+            ourShapes->push_back(*newCircle);
         }
         else if(enumPos == 7)
         {
@@ -379,12 +389,11 @@ void parser()
             QPoint p1(d1, d2);
 
             Text *newText = new Text(p1, d3, d4, textString, tProp);
+            ourShapes->push_back(*newText);
         }
 		cout << endl;
 	}
 	inFile.close();
-	//vector<shape> shapes(8);
-
 }
 
 
