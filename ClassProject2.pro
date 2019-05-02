@@ -33,6 +33,7 @@ SOURCES += \
     nonfillableshapes.cpp \
     polygon.cpp \
     polyline.cpp \
+    rectangle.cpp \
     shape.cpp \
     admindialog.cpp \
     guestdialog.cpp

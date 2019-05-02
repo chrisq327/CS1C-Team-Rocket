@@ -9,7 +9,7 @@ class Text : public Shape
 public:
     Text(QPoint&, int, int, QString&, textProperties);
 
-    void draw() override;
+    void draw(QPainter&) override;
 
     QString getText() const;
     int getWidth() const;
