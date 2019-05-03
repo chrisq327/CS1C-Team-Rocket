@@ -1,18 +1,11 @@
-/*
- * Name: Wesley Nagato
- * Student ID: 847610
- * Date: Apr 11, 2019
- * Class: CS1C
- * Time: T/Th 3:00pm-5:20pm
- *
- */
-
 #ifndef VECTOR_H_
 #define VECTOR_H_
 
 #include "iostream"
-
+#include "QPoint"
 #include <algorithm> // std::copy
+#include "shape.h"
+
 using std::copy;
 using namespace std;
 namespace myStd
@@ -38,8 +31,8 @@ public:
 
     explicit vector(int s) : size_v{s}, elem{new T[s]}, space{s} // alternate constructor
     {
-        for (int i = 0; i < size_v; ++i)
-            elem[i] = T(); //0; // elements are initialized
+       for (int i = 0; i < size_v; ++i)
+           elem[i] = T(); // elements are initialized
     }
 
     vector(const vector &src) : size_v{src.size_v}, elem{new T[src.size_v]}, space{src.space} // copy constructor
@@ -83,7 +76,7 @@ public:
     {
         reserve(newsize);
         for (int i = size_v; i < newsize; ++i)
-            elem[i] = 0; // initialize new elements
+           elem[i] =  T(); // initialize new elements
         size_v = newsize;
     }
 
@@ -151,22 +144,24 @@ public:
     iterator insert(iterator p, const T &val) // insert a new element val before p
     {
         // make sure we have space
-    	if(!(size_v < space))
+        int index = p - begin();
+        if(!(size_v == space))
     	{
-    		return p;
+            reserve(size() == 0 ? 8 : 2* size());
     	}
 
-		for (iterator pos = end()-1; pos != p-1; --pos)
+        iterator pp = begin() + index;
+        for (iterator pos = end()-1; pos != pp-1; --pos)
 				*(pos + 1) = *pos;
 
-		*p = val;
+        *(begin()+index) = val;
 		size_v++;
 
         // the place to put value
 
         // copy element one position to the right
         // insert value
-        return p;
+        return pp;
     }
 
     iterator erase(iterator p) // remove element pointed to by p
