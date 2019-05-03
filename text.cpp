@@ -1,6 +1,6 @@
 #include "text.h"
 
-Text::Text(QPoint& topL, QPoint& botR, unsigned int ID, QString& message, textProperties tProps) : Shape(topL, ID)
+Text::Text(const QPoint& topL, const QPoint& botR, unsigned int ID, QString& message, textProperties tProps) : Shape(topL, ID)
 {
     width = botR.x() - topL.x();
     height = botR.y() - topL.y();

@@ -7,7 +7,7 @@
 class fillableShape : public Shape
 {
 public:
-    fillableShape(QPoint&, unsigned int, fillProperties, borderProperties);
+    fillableShape(const QPoint&, unsigned int, fillProperties, borderProperties);
 
     fillProperties getFillProperties();
     borderProperties getBorderProperties();

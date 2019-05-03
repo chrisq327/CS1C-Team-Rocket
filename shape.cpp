@@ -1,6 +1,6 @@
 #include "shape.h"
 
-Shape::Shape(QPoint& pos, unsigned int ID) : topL{pos}, id{ID}
+Shape::Shape(const QPoint& pos, unsigned int ID) : topL{pos}, id{ID}
 {
 }
 

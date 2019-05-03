@@ -22,7 +22,7 @@ public:
 
     virtual ~Shape();
 
-    Shape(QPoint&, unsigned int);
+    Shape(const QPoint&, unsigned int);
 
     QPoint getPosition() const;
     unsigned int getId() const;
