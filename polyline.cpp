@@ -8,7 +8,7 @@ Polyline::Polyline(const myStd::vector<QPoint>& p, unsigned int ID, borderProper
 void Polyline::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
-  //qpainter.drawPolyline() idk how to use yet
+    qpainter.drawPolyline(&points[0], 4);
 }
 
 myStd::vector<QPoint> Polyline::getPoints() const

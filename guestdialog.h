@@ -3,6 +3,12 @@
 
 #include <QDialog>
 #include <QMainWindow>
+#include <QPainter>
+#include <QtCore>
+#include <QtGui>
+#include "shape.h"
+#include "line.h"
+#include "nonfillableshape.h"
 
 namespace Ui {
 class GuestDialog;
@@ -21,6 +27,9 @@ private slots:
 
 private:
     Ui::GuestDialog *ui;
+
+protected:
+    void paintEvent(QPaintEvent *);
 };
 
 #endif // GUESTDIALOG_H

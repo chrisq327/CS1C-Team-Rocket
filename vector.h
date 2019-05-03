@@ -39,7 +39,7 @@ public:
     explicit vector(int s) : size_v{s}, elem{new T[s]}, space{s} // alternate constructor
     {
         for (int i = 0; i < size_v; ++i)
-            elem[i] = 0; // elements are initialized
+            elem[i] = T(); //0; // elements are initialized
     }
 
     vector(const vector &src) : size_v{src.size_v}, elem{new T[src.size_v]}, space{src.space} // copy constructor
