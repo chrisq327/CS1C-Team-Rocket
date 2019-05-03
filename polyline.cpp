@@ -1,6 +1,6 @@
 #include "polyline.h"
 
-Polyline::Polyline(myStd::vector<QPoint> &p, unsigned int ID, borderProperties bProps) : nonfillableShape(p[0], ID, bProps)
+Polyline::Polyline(const myStd::vector<QPoint> &p, unsigned int ID, borderProperties bProps) : nonfillableShape(p[0], ID, bProps)
 {
     points = p;
 }
