@@ -53,10 +53,10 @@ void GuestDialog::paintEvent(QPaintEvent *)
     //painter2.setPen(pen2);
     //painter2.drawLine(line);
 
-    borderProperties borderP;
-    QPainter painter3(this);
-    Line l(20, 90, 100, 20, 1, borderP);
-    l.draw(painter3);
+    //borderProperties borderP;
+    //QPainter painter3(this);
+    //Line l(20, 90, 100, 20, 1, borderP);
+    //l.draw(painter3);
 
     static const QPoint points[4] = {QPoint(460, 90), QPoint(470, 20), QPoint(530, 40), QPoint(540, 80)};
     //QPainter painter4(this);
@@ -68,14 +68,14 @@ void GuestDialog::paintEvent(QPaintEvent *)
     //painter4.setPen(pen4);
     //painter4.drawPolyline(points, 4);
 
-    const myStd::vector<QPoint> polVec(4);
+    //const myStd::vector<QPoint> polVec(4);
     //const myStd::vector<QPoint> *ptrvec = &polVec;
-    QPainter painter5(this);
-    Polyline pol(polVec, 2, borderP);
-    for(int i = 0; i < 4; i++)
-    {
-        pol.addPoint(points[i]);
-    }
-    pol.draw(painter5);
+    //QPainter painter5(this);
+    //Polyline pol(polVec, 2, borderP);
+    //for(int i = 0; i < 4; i++)
+    //{
+       // pol.addPoint(points[i]);
+    //}
+    //pol.draw(painter5);
 }
 

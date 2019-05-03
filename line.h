@@ -6,8 +6,8 @@
 class Line : public nonfillableShape
 {
 public:
-    Line(const QPoint&, const QPoint&, unsigned int, borderProperties);
-    Line(int, int, int, int, unsigned int, borderProperties);
+    Line(QPoint&, QPoint&, unsigned int, borderProperties);
+    Line(QPoint&, int, int, unsigned int, borderProperties);
 
     void draw(QPainter&) override;
 

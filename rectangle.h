@@ -6,8 +6,8 @@
 class Rectangle : public fillableShape
 {
 public:
-    Rectangle(const QPoint&, const QPoint&, unsigned int, fillProperties, borderProperties);
-    Rectangle(const QPoint&, int, int, unsigned int, fillProperties, borderProperties);
+    Rectangle(QPoint&, QPoint&, unsigned int, fillProperties, borderProperties);
+    Rectangle(QPoint&, int, int, unsigned int, fillProperties, borderProperties);
 
     void draw(QPainter&) override;
 

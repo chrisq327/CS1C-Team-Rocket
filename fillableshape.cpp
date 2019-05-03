@@ -1,6 +1,6 @@
 #include "fillableshape.h"
 
-fillableShape::fillableShape(const QPoint& pos, unsigned int ID, fillProperties fillProperties, borderProperties borderProperties) : Shape(pos, ID)
+fillableShape::fillableShape(QPoint& pos, unsigned int ID, fillProperties fillProperties, borderProperties borderProperties) : Shape(pos, ID)
 {
     fillProps = fillProperties;
     borderProps = borderProperties;

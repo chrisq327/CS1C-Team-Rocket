@@ -1,6 +1,6 @@
 #include "polygon.h"
 
-Polygon::Polygon(const myStd::vector<QPoint>& p, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape(p[0], ID, fProps, bProps)
+Polygon::Polygon(myStd::vector<QPoint>& p, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape(p[0], ID, fProps, bProps)
 {
     points = p;
 }

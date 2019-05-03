@@ -7,7 +7,7 @@
 class Text : public Shape
 {
 public:
-    Text(const QPoint&, const QPoint&, unsigned int, QString&, textProperties);
+    Text(QPoint&, QPoint&, unsigned int, QString&, textProperties);
 
     void draw(QPainter&) override;
 

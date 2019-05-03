@@ -1,7 +1,7 @@
 #include "nonfillableshape.h"
 #include "properties.h"
 
-nonfillableShape::nonfillableShape(const QPoint& pos, unsigned int ID, borderProperties borderProperties) : Shape(pos, ID)
+nonfillableShape::nonfillableShape(QPoint& pos, unsigned int ID, borderProperties borderProperties) : Shape(pos, ID)
 {
     borderProps = borderProperties;
 }

@@ -7,7 +7,7 @@
 class Polyline : public nonfillableShape
 {
 public:
-    Polyline(const myStd::vector<QPoint>&, unsigned int, borderProperties);
+    Polyline(myStd::vector<QPoint>&, unsigned int, borderProperties);
 
     void draw(QPainter&) override;
 

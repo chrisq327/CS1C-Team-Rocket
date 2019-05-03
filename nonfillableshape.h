@@ -7,7 +7,7 @@
 class nonfillableShape : public Shape
 {
 public:
-    nonfillableShape(const QPoint&, unsigned int, borderProperties);
+    nonfillableShape(QPoint&, unsigned int, borderProperties);
 
     borderProperties getBorderProperties() const;
 
