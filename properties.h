@@ -18,14 +18,14 @@ struct borderProperties
 struct fillProperties
 {
     Qt::GlobalColor brushColor = Qt::GlobalColor::black;
-    Qt::BrushStyle brushStyle = Qt::BrushStyle::NoBrush;
+    Qt::BrushStyle brushStyle = Qt::BrushStyle::VerPattern;
 };
 
 struct textProperties
 {
     Qt::GlobalColor textColor = Qt::GlobalColor::black;
-    Qt::AlignmentFlag textAlignment = Qt::AlignmentFlag::AlignLeft;
-    int textSize = 0;
+    Qt::AlignmentFlag textAlignment = Qt::AlignmentFlag::AlignCenter;
+    int textSize = 12;
     QString textFontFamily = "Times New Roman";
     QFont::Style textFontStyle = QFont::Style::StyleNormal;
     QFont::Weight textFontWeight = QFont::Weight::Normal;
