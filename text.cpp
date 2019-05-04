@@ -61,3 +61,112 @@ void Text::setHeight(int h)
     height = h;
 }
 
+std::string Text::toString()
+{
+    std::string shapeID = std::to_string(getId());
+    std::string shapeType = "Text";
+    std::string dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(width) + ", " + std::to_string(height);
+    std::string textString = text.toStdString();
+    std::string textColor;
+    std::string textAlignment;
+    std::string textPointSize = std::to_string(textProps.textSize);
+    std::string textFontFamily = textProps.textFontFamily.toStdString();
+    std::string textFontStyle;
+    std::string textFontWeight;
+
+    switch(textProps.textColor)
+        {
+        case Qt::GlobalColor::white:
+            textColor = "white";
+            break;
+        case Qt::GlobalColor::black:
+            textColor = "black";
+            break;
+        case Qt::GlobalColor::red:
+            textColor = "red";
+            break;
+        case Qt::GlobalColor::green:
+            textColor = "green";
+            break;
+        case Qt::GlobalColor::blue:
+            textColor = "blue";
+            break;
+        case Qt::GlobalColor::cyan:
+            textColor = "cyan";
+            break;
+        case Qt::GlobalColor::magenta:
+            textColor = "magenta";
+            break;
+        case Qt::GlobalColor::yellow:
+            textColor = "yellow";
+            break;
+        case Qt::GlobalColor::gray:
+            textColor = "gray";
+            break;
+        default:
+            break;
+        }
+
+        switch(textProps.textAlignment)
+        {
+        case Qt::AlignmentFlag::AlignLeft:
+            textAlignment = "AlignLeft";
+            break;
+        case Qt::AlignmentFlag::AlignRight:
+            textAlignment = "AlignRight";
+            break;
+        case Qt::AlignmentFlag::AlignTop:
+            textAlignment = "AlignTop";
+            break;
+        case Qt::AlignmentFlag::AlignBottom:
+            textAlignment = "AlignBottom";
+            break;
+        case Qt::AlignmentFlag::AlignCenter:
+            textAlignment = "AlignCenter";
+            break;
+        default:
+            break;
+        }
+
+        switch(textProps.textFontStyle)
+        {
+        case QFont::Style::StyleNormal:
+            textFontStyle = "StyleNormal";
+            break;
+        case QFont::Style::StyleItalic:
+            textFontStyle = "StyleItalic";
+            break;
+        case QFont::Style::StyleOblique:
+            textFontStyle = "StyleOblique";
+            break;
+        }
+
+        switch(textProps.textFontWeight)
+        {
+        case QFont::Weight::Thin:
+            textFontWeight = "Thin";
+            break;
+        case QFont::Weight::Light:
+            textFontWeight = "Light";
+            break;
+        case QFont::Weight::Normal:
+            textFontWeight = "Normal";
+            break;
+        case QFont::Weight::Bold:
+            textFontWeight = "Bold";
+            break;
+        default:
+            break;
+        }
+
+        return "Shape Id: "        + shapeID        + "\n" +
+               "ShapeType: "       + shapeType      + "\n" +
+               "ShapeDimensions: " + dimensions     + "\n" +
+               "TextString: "      + textString     + "\n" +
+               "TextColor: "       + textColor      + "\n" +
+               "TextAlignment: "   + textAlignment  + "\n" +
+               "TextPointSize: "   + textPointSize  + "\n" +
+               "TextFontFamily: "  + textFontFamily + "\n" +
+               "TextFontStyle: "   + textFontStyle  + "\n" +
+               "TextFontWeight: "  + textFontWeight + "\n";
+}

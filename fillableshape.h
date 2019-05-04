@@ -18,6 +18,7 @@ protected:
     fillProperties fillProps;
     borderProperties borderProps;
     virtual void applyProperties(QPainter&) const;
+    virtual std::string toStringProps();
 };
 
 #endif // FILLABLESHAPE_H

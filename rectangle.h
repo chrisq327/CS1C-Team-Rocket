@@ -10,6 +10,7 @@ public:
     Rectangle(const QPoint&, int, int, unsigned int, fillProperties, borderProperties);
 
     void draw(QPainter&) override;
+    std::string toString() override;
 
     int getWidth() const;
     int getHeight() const;

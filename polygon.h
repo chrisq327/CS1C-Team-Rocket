@@ -10,6 +10,7 @@ public:
     Polygon(const myStd::vector<QPoint>&, unsigned int, fillProperties, borderProperties);
 
     void draw(QPainter&) override;
+    std::string toString() override;
 
     myStd::vector<QPoint> getPoints() const;
 

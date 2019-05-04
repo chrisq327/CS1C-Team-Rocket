@@ -25,3 +25,21 @@ void Polyline::addPoint(const QPoint & newPoint)
 {
     points.push_back(newPoint);
 }
+
+std::string Polyline::toString()
+{
+    std::string shapeID = std::to_string(getId());
+    std::string shapeType = "Polygon";
+    std::string dimensions;
+
+    for(int i=0; i<points.size(); i++)
+    {
+        dimensions += std::to_string(points[i].x()) + ", " + std::to_string(points[i].y());
+        dimensions += (i != points.size() - 1 ? ", " : "");
+    }
+
+    return "Shape Id: "        + shapeID     + "\r\n" +
+           "ShapeType: "       + shapeType   + "\r\n" +
+           "ShapeDimensions: " + dimensions  + "\r\n" +
+           toStringProps();
+}

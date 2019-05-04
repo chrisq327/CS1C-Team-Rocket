@@ -9,6 +9,7 @@
 #include <QtGui>
 #include <QtCore>
 #include <QRect>
+#include <string>
 
 class Shape
 {
@@ -19,6 +20,7 @@ protected:
     QPoint topL; //start point
 public:
     virtual void draw(QPainter&) = 0;
+    virtual std::string toString() = 0;
 
     virtual ~Shape();
 

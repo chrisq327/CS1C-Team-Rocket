@@ -37,3 +37,27 @@ void Rectangle::setHeight(int h)
 {
     height = h;
 }
+
+std::string Rectangle::toString()
+{
+    std::string shapeID = std::to_string(getId());
+    std::string shapeType;
+    std::string dimensions;
+
+    if (width == height)
+    {
+        shapeType = "Square";
+        dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(width);
+    }
+
+    else if (width!= height)
+    {
+        shapeType = "Rectangle";
+        dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(width) + ", " + std::to_string(height);
+    }
+
+    return "Shape Id: "        + shapeID     + "\r\n" +
+           "ShapeType: "       + shapeType   + "\r\n" +
+           "ShapeDimensions: " + dimensions  + "\r\n" +
+           toStringProps();
+}

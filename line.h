@@ -10,6 +10,7 @@ public:
     Line(const QPoint&, int, int, unsigned int, borderProperties);
 
     void draw(QPainter&) override;
+    std::string toString() override;
 
     QPoint getStart();
     QPoint getEnd();

@@ -10,6 +10,7 @@ public:
     Ellipse(const QPoint&, int, int, unsigned int, fillProperties, borderProperties);
 
     void draw(QPainter&) override;
+    std::string toString() override;
 
     int getWidth();
     int getHeight();
