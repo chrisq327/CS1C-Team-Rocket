@@ -8,7 +8,15 @@ Polygon::Polygon(const myStd::vector<QPoint>& p, unsigned int ID, fillProperties
 void Polygon::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
-   // qpainter.drawPolygon(); not sure how to implement yet
+
+    QPoint arrayPoints[points.size()];
+
+    for (int i=0; i<points.size(); i++)
+    {
+        arrayPoints[i] = points[i];
+    }
+
+    qpainter.drawPolygon(arrayPoints, points.size());
 }
 
 myStd::vector<QPoint> Polygon::getPoints() const
