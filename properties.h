@@ -26,7 +26,7 @@ struct textProperties
     Qt::GlobalColor textColor = Qt::GlobalColor::black;
     Qt::AlignmentFlag textAlignment = Qt::AlignmentFlag::AlignCenter;
     int textSize = 12;
-    QString textFontFamily = "Times New Roman";
+    QString textFontFamily = "Comic Sans MS";
     QFont::Style textFontStyle = QFont::Style::StyleNormal;
     QFont::Weight textFontWeight = QFont::Weight::Normal;
 };
