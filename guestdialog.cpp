@@ -45,5 +45,7 @@ void GuestDialog::paintEvent(QPaintEvent *)
         drawThis->draw(painter);
     }
 
+    fileSave(ourShapes);
+
 }
 

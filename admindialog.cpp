@@ -38,4 +38,7 @@ void AdminDialog::paintEvent(QPaintEvent *event)
         drawThis->draw(painter);
     }
 
+    fileSave(ourShapes);
+
+
 }

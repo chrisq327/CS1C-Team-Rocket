@@ -3,30 +3,8 @@
 //using namespace myStd;
 
 #include "parser.h"
-#include "properties.h"
-#include "line.h"
-#include "polyline.h"
-#include "polygon.h"
-#include "rectangle.h"
-#include "ellipse.h"
-#include "text.h"
-#include "vector.h"
 
 
-
-void setPenColor(borderProperties &bProp, string color);
-void setPenStyle(borderProperties &bProp, string penStyle);
-void setPenCapStyle(borderProperties &bProp, string penCap);
-void setPenJoinStlye(borderProperties &bProp, string joinStyle);
-
-void setBrushColor(fillProperties &fProp, string color);
-void setBrushStyle(fillProperties &fProp, string brushStyle);
-
-void setTextColor(textProperties &tProp, string textColor);
-void setTextAlignment(textProperties &tProp, string textAlign);
-void setTextFontFamily(textProperties &tProp, string textFont);
-void setTextStyle(textProperties &tProp, string textStyle);
-void setTextWeight(textProperties &tProp, string textWeight);
 
 
 void parser(vector<Shape*> *ourShapes)
@@ -700,6 +678,16 @@ void setTextWeight(textProperties &tProp, string textWeight)
     }
 }
 
-
+void fileSave(vector<Shape*> *ourShapes)
+{
+    ofstream outFile;
+    outFile.open("outShapes.txt");
+    for(int i = 0; i < ourShapes->size(); i++)
+    {
+        outFile << (*ourShapes)[i]->toString();
+        outFile << endl;
+    }
+    outFile.close();
+}
 
 
