@@ -31,7 +31,7 @@ void nonfillableShape::applyProperties(QPainter & qpainter) const
 std::string nonfillableShape::toStringProps()
 {
     std::string penColor;
-    std::string penWidth;
+    std::string penWidth = std::to_string(borderProps.penWidth);
     std::string penStyle;
     std::string penCapStyle;
     std::string penJoinStyle;
