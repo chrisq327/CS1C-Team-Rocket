@@ -15,6 +15,7 @@ void Line::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
     qpainter.drawLine(topL, end);
+    qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
 QPoint Line::getStart()

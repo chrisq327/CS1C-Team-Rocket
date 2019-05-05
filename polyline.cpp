@@ -17,6 +17,7 @@ void Polyline::draw(QPainter& qpainter)
     }
 
     qpainter.drawPolyline(arrayPoints, points.size());
+    qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
 myStd::vector<QPoint> Polyline::getPoints() const

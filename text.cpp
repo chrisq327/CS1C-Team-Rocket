@@ -16,6 +16,7 @@ void Text::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
     qpainter.drawText(topL.x(), topL.y(), text);
+    qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
 void Text::applyProperties(QPainter& qpainter)
