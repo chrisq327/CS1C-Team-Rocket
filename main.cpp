@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include "vector.h"
+#include "shape.h"
+
+
 
 int main(int argc, char *argv[])
 {

@@ -37,6 +37,7 @@ void Ellipse::draw(QPainter& qpainter)
     applyProperties(qpainter);
     QRect box(topL.x(), topL.y(), width, height);
     qpainter.drawEllipse(box);
+    qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
 std::string Ellipse::toString()
