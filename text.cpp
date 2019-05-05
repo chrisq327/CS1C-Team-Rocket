@@ -4,6 +4,10 @@ Text::Text(const QPoint& topL, const QPoint& botR, unsigned int ID, QString& mes
 {
     width = botR.x() - topL.x();
     height = botR.y() - topL.y();
+    if(height < 0)
+    {
+        height = (height*(-1));
+    }
     text = message;
     textProps = tProps;
 }
@@ -11,7 +15,7 @@ Text::Text(const QPoint& topL, const QPoint& botR, unsigned int ID, QString& mes
 void Text::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
-    qpainter.drawText(topL.x(), topL.y(), width, height, textProps.textAlignment, text);
+    qpainter.drawText(topL.x(), topL.y(), text);
 }
 
 void Text::applyProperties(QPainter& qpainter)

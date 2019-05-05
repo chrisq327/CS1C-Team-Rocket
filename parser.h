@@ -18,7 +18,7 @@
 
 using namespace std;
 
-void parser();
+void parser(vector<Shape*> *ourShape);
 int convert(string shapeType);
 
 

@@ -13,6 +13,7 @@
 #include "vector.h"
 
 
+
 void setPenColor(borderProperties &bProp, string color);
 void setPenStyle(borderProperties &bProp, string penStyle);
 void setPenCapStyle(borderProperties &bProp, string penCap);
@@ -28,7 +29,7 @@ void setTextStyle(textProperties &tProp, string textStyle);
 void setTextWeight(textProperties &tProp, string textWeight);
 
 
-void parser()
+void parser(vector<Shape*> *ourShapes)
 {
 	ifstream inFile;
 	enum ShapeType{line, polyline, polygon, rectangle, square, ellipse, circle, text};
@@ -63,11 +64,12 @@ void parser()
 	int enumPos;
 	char eater;
 
-	while(!(inFile.eof()))
+    while(inFile >> trash)
 	{
-        vector<Shape*> *ourShapes = new vector<Shape*>(8);
 
-		inFile >> trash;
+
+
+        //inFile >> trash;
 		inFile >> id;
 		inFile >> trash;
 		inFile >> shapeType;
@@ -255,7 +257,7 @@ void parser()
             QPoint p3(d5, d6);
             QPoint p4(d7, d8);
 
-            myStd::vector<QPoint> *polylinePoints;
+            myStd::vector<QPoint> *polylinePoints = new myStd::vector<QPoint>;
             polylinePoints->push_back(p1);
             polylinePoints->push_back(p2);
             polylinePoints->push_back(p3);
@@ -284,7 +286,7 @@ void parser()
             QPoint p3(d5, d6);
             QPoint p4(d7, d8);
 
-            myStd::vector<QPoint> *polygonPoints;
+            myStd::vector<QPoint> *polygonPoints = new myStd::vector<QPoint>;
             polygonPoints->push_back(p1);
             polygonPoints->push_back(p2);
             polygonPoints->push_back(p3);
@@ -311,7 +313,7 @@ void parser()
             QPoint p1(d1, d2);
             QPoint p2(d3, d4);
 
-            Rectangle *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
+            Shape *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
             ourShapes->push_back(newRectangle);
         }
         else if(enumPos == 4)
@@ -331,7 +333,7 @@ void parser()
 
             QPoint p1(d1, d2);
 
-            Rectangle *newSquare = new Rectangle(p1, d3, d3, id, fProp, bProp);
+            Shape *newSquare = new Rectangle(p1, d3, d3, id, fProp, bProp);
             ourShapes->push_back(newSquare);
         }
         else if(enumPos == 5)
@@ -352,7 +354,7 @@ void parser()
             QPoint p1(d1, d2);
             QPoint p2(d3, d4);
 
-            Ellipse *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
+            Shape *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
             ourShapes->push_back(newEllipse);
         }
         else if (enumPos == 6)
@@ -372,8 +374,8 @@ void parser()
 
             QPoint p1(d1, d2);
 
-            //Ellipse *newCircle = new Ellipse(p1, d3, d3, id, fProp, bProp);
-            //ourShapes->push_back(*newCircle);
+            Shape *newCircle = new Ellipse(p1, d3, d3, id, fProp, bProp);
+            ourShapes->push_back(newCircle);
         }
         else if(enumPos == 7)
         {
@@ -382,18 +384,18 @@ void parser()
             setTextColor(tProp, textColor);
             setTextAlignment(tProp, textAlign);
             tProp.textSize = textSize;
-            setTextFontFamily(tProp, textFontFamily);
+            tProp.textFontFamily = QString::fromStdString(textFontFamily);
             setTextStyle(tProp, textFontStyle);
             setTextWeight(tProp, textFontWeight);
 
             QString qTextString = QString::fromStdString(textString);
             QPoint p1(d1, d2);
             QPoint p2(d3, d4);
-            Text *newText = new Text(p1, p2, id, qTextString, tProp);
+            Shape *newText = new Text(p1, p2, id, qTextString, tProp);
             ourShapes->push_back(newText);
         }
 		cout << endl;
-	}
+    }
 	inFile.close();
 }
 

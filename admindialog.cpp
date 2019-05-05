@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include <QMessageBox>
 #include <vector.h>
+#include "parser.h"
 
 AdminDialog::AdminDialog(QWidget *parent) :
     QDialog(parent),
@@ -26,16 +27,15 @@ void AdminDialog::on_pushButton_Logout_clicked()
 
 void AdminDialog::paintEvent(QPaintEvent *event)
 {
+
+    vector<Shape*> *ourShapes = new vector<Shape*>;
+    parser(ourShapes);
+    Shape *drawThis;
     QPainter painter(this);
-    QPen pen1(Qt::blue);
-    pen1.setWidth(0);
-    pen1.setStyle(Qt::DashLine);
-    pen1.setCapStyle(Qt::RoundCap);
-    pen1.setJoinStyle(Qt::RoundJoin);
-    QBrush brush1(Qt::red);
-    brush1.setStyle(Qt::VerPattern);
-    QRect rec(20,200,170,100);
-    painter.setPen(pen1);
-    painter.setBrush(brush1);
-    painter.drawRect(rec);
+    for(int i = 0; i < ourShapes->size(); i++)
+    {
+        drawThis = (*ourShapes)[i];
+        drawThis->draw(painter);
+    }
+
 }

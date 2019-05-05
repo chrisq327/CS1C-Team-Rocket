@@ -29,7 +29,7 @@ class vector
 public:
     vector() : size_v{0}, elem{nullptr}, space{0} {} // default constructor
 
-    explicit vector(int s) : size_v{s}, elem{new T[s]}, space{s} // alternate constructor
+    explicit vector(int s) : size_v{0}, elem{new T[s]}, space{s} // alternate constructor
     {
        for (int i = 0; i < size_v; ++i)
            elem[i] = T(); // elements are initialized
