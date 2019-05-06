@@ -17,6 +17,14 @@ AdminDialog::~AdminDialog()
     delete ui;
 }
 
+void AdminDialog::on_pushButton_addShape_clicked()
+{
+    //this->hide();
+    addDialog = new AddDialog;
+    addDialog->show();
+
+}
+
 void AdminDialog::on_pushButton_Logout_clicked()
 {
     QMessageBox::information(this, "Logout", "Admin has logged out");

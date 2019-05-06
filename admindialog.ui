@@ -26,6 +26,19 @@
     <string>Log out</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_addShape">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>450</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add shape</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

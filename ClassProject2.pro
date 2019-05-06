@@ -38,7 +38,8 @@ SOURCES += \
     shape.cpp \
     admindialog.cpp \
     guestdialog.cpp \
-    text.cpp
+    text.cpp \
+    adddialog.cpp
 
 HEADERS += \
     ellipse.h \
@@ -55,12 +56,14 @@ HEADERS += \
     text.h \
     vector.h \
     admindialog.h \
-    guestdialog.h
+    guestdialog.h \
+    adddialog.h
 
 FORMS += \
         mainwindow.ui \
     guestdialog.ui \
-    admindialog.ui
+    admindialog.ui \
+    adddialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

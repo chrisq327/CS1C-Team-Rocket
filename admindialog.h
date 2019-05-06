@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QtCore>
 #include <QtGui>
+#include "adddialog.h"
 
 namespace Ui {
 class AdminDialog;
@@ -22,7 +23,10 @@ public:
 private slots:
     void on_pushButton_Logout_clicked();
 
+    void on_pushButton_addShape_clicked();
+
 private:
+    AddDialog *addDialog;
     Ui::AdminDialog *ui;
 
 protected:
