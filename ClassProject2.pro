@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
     ellipse.cpp \
     fillableshape.cpp \
+    functions.cpp \
     line.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -44,6 +45,7 @@ SOURCES += \
 HEADERS += \
     ellipse.h \
     fillableshape.h \
+    functions.h \
     line.h \
         mainwindow.h \
     nonfillableshape.h \

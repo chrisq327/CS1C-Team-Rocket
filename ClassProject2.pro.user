@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.9.0, 2019-05-04T14:22:10. -->
-=======
-<!-- Written by QtCreator 4.9.0, 2019-05-05T11:15:42. -->
->>>>>>> 2eb173106b7c37f0d6880de3d5c964ff5cd14d8d
+<!-- Written by QtCreator 4.9.0, 2019-05-05T13:46:27. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -309,7 +305,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">ClassProject2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ClassProject22</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/cs1c/Desktop/Team Rocket/CS1C-Team-Rocket/ClassProject2.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/cs1c/Desktop/team rocket/CS1C-Team-Rocket/ClassProject2.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>

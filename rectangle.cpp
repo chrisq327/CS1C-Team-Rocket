@@ -16,6 +16,7 @@ void Rectangle::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
     qpainter.drawRect(topL.x(), topL.y(), width, height);
+    qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
 int Rectangle::getWidth() const

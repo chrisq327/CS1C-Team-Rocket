@@ -4,10 +4,13 @@
 #include <QMainWindow>
 #include "guestdialog.h"
 #include "admindialog.h"
+#include "vector.h"
+#include "shape.h"
 
 namespace Ui {
 class MainWindow;
 }
+
 
 class MainWindow : public QMainWindow
 {

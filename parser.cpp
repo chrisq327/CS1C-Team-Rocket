@@ -381,7 +381,6 @@ void parser(vector<Shape*> *ourShapes)
 
 int convert(string s)
 {
-	//enum ShapeType{line, polyline, polygon, rectangle, square, ellipse, circle, text};
 
 	if(s == "Line")
 		return 0;
