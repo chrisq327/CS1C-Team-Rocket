@@ -5,11 +5,16 @@
 #include <vector.h>
 #include "parser.h"
 
+
+vector<Shape*> *ourShapes = new vector<Shape*>;
+
 AdminDialog::AdminDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AdminDialog)
 {
     ui->setupUi(this);
+    parser(ourShapes);
+    update();
 }
 
 AdminDialog::~AdminDialog()
@@ -20,10 +25,25 @@ AdminDialog::~AdminDialog()
 void AdminDialog::on_pushButton_addShape_clicked()
 {
     //this->hide();
-    addDialog = new AddDialog;
+    addDialog = new AddDialog(this);
     addDialog->show();
-
+    hide();
 }
+
+void AdminDialog::on_pushButton_deleteShape_clicked()
+{
+    deleteDialog = new DeleteDialog(this);
+    deleteDialog->show();
+    hide();
+}
+
+void AdminDialog::on_pushButton_clicked()
+{
+    moveDialog = new MoveDialog(this);
+    moveDialog->show();
+    hide();
+}
+
 
 void AdminDialog::on_pushButton_Logout_clicked()
 {
@@ -35,9 +55,6 @@ void AdminDialog::on_pushButton_Logout_clicked()
 
 void AdminDialog::paintEvent(QPaintEvent *event)
 {
-
-    vector<Shape*> *ourShapes = new vector<Shape*>;
-    parser(ourShapes);
     Shape *drawThis;
     QPainter painter(this);
     for(int i = 0; i < ourShapes->size(); i++)
@@ -47,6 +64,10 @@ void AdminDialog::paintEvent(QPaintEvent *event)
     }
 
     fileSave(ourShapes);
-
-
+}
+namespace adminFunc {
+    void addShape(Shape *newShape)
+    {
+        ourShapes->push_back(newShape);
+    }
 }

@@ -216,7 +216,6 @@ void parser(vector<Shape*> *ourShapes)
             QPoint p1(d1, d2);
             QPoint p2(d3, d4);
 
-            //Line newLine = new
             Shape *newLine = new Line(p1, p2, id, bProp);
             ourShapes->push_back(newLine);
         }
