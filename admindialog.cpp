@@ -30,6 +30,21 @@ void AdminDialog::on_pushButton_addShape_clicked()
     hide();
 }
 
+void AdminDialog::on_pushButton_deleteShape_clicked()
+{
+    deleteDialog = new DeleteDialog(this);
+    deleteDialog->show();
+    hide();
+}
+
+void AdminDialog::on_pushButton_clicked()
+{
+    moveDialog = new MoveDialog(this);
+    moveDialog->show();
+    hide();
+}
+
+
 void AdminDialog::on_pushButton_Logout_clicked()
 {
     QMessageBox::information(this, "Logout", "Admin has logged out");
@@ -56,4 +71,3 @@ namespace adminFunc {
         ourShapes->push_back(newShape);
     }
 }
-

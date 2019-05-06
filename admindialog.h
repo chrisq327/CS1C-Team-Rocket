@@ -7,6 +7,8 @@
 #include <QtCore>
 #include <QtGui>
 #include "adddialog.h"
+#include "deletedialog.h"
+#include "movedialog.h"
 #include "shape.h"
 
 namespace Ui {
@@ -31,8 +33,14 @@ private slots:
 
     void on_pushButton_addShape_clicked();
 
+    void on_pushButton_deleteShape_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     AddDialog *addDialog;
+    DeleteDialog *deleteDialog;
+    MoveDialog *moveDialog;
     Ui::AdminDialog *ui;
 
 protected:
