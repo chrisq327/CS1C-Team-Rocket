@@ -7,9 +7,14 @@
 #include <QtCore>
 #include <QtGui>
 #include "adddialog.h"
+#include "shape.h"
 
 namespace Ui {
 class AdminDialog;
+}
+
+namespace adminFunc {
+    void addShape(Shape *);
 }
 
 class AdminDialog : public QDialog
@@ -18,6 +23,7 @@ class AdminDialog : public QDialog
 
 public:
     explicit AdminDialog(QWidget *parent = nullptr);
+
     ~AdminDialog();
 
 private slots:
@@ -33,6 +39,7 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 };
+
 
 #endif // ADMINDIALOG_H
 

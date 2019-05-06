@@ -2,6 +2,7 @@
 #define ADDDIALOG_H
 
 #include <QDialog>
+#include "shape.h"
 
 namespace Ui {
 class AddDialog;
@@ -14,6 +15,7 @@ class AddDialog : public QDialog
 public:
     explicit AddDialog(QWidget *parent = nullptr);
     ~AddDialog();
+
 
 private slots:
     void on_pushButton_addShape_clicked();

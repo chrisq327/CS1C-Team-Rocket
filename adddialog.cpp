@@ -3,6 +3,7 @@
 #include "parser.h"
 #include "admindialog.h"
 #include "ui_adddialog.h"
+#include "mainwindow.h"
 
 AddDialog::AddDialog(QWidget *parent) :
     QDialog(parent),
@@ -110,5 +111,80 @@ void AddDialog::on_pushButton_addShape_clicked()
 {
     QString shapeType;
 
-    hide();
+    QString shape = ui->comboBox_shapeType->currentText();
+
+
+    if(shape == "Line")
+    {
+        borderProperties bProp;
+
+        QString shape = ui->comboBox_shapeType->currentText();
+        QString penColor = ui->comboBox_penColor->currentText();
+        QString penStyle = ui->comboBox_penStyle->currentText();
+        QString penCapStyle = ui->comboBox_penCapStyle->currentText();
+        QString penJoinStyle = ui->comboBox_penJoinStyle->currentText();
+        QString penWidth = ui->comboBox_penWidth->currentText();
+        QString dimensions = ui->lineEdit_dimensions->text();
+
+        int index1 = dimensions.indexOf(' ');
+        int index2 = dimensions.indexOf(' ', index1);
+
+        QString d1 = dimensions.remove(index1, index2);
+        index1 = dimensions.indexOf(' ', index2);
+        index2 = dimensions.indexOf(' ', index1);
+        QString d2 = dimensions.remove(index1, index2);
+        index1 = dimensions.indexOf(' ', index2);
+        index2 = dimensions.indexOf(' ', index1);
+        QString d3 = dimensions.remove(index1, index2);
+        index1 = dimensions.indexOf(' ', index2);
+        index2 = dimensions.indexOf(' ', index1);
+        QString d4 = dimensions.remove(index1, index2);
+
+        setPenColor(bProp, penColor.toStdString());
+        bProp.penWidth = penWidth.toInt();
+        setPenStyle(bProp, penStyle.toStdString());
+        setPenCapStyle(bProp, penCapStyle.toStdString());
+        setPenJoinStlye(bProp, penJoinStyle.toStdString());
+
+
+
+        QPoint p1(d1.toInt(), d2.toInt());
+        QPoint p2(d3.toInt(), d4.toInt());
+        int id = 10;
+        Shape *newLine = new Line(p1, p2, id, bProp);
+        adminFunc::addShape(newLine);
+    }
+    else if(shape == "Polyline")
+    {
+
+    }
+    else if(shape == "Polygon")
+    {
+
+    }
+    else if(shape == "Rectangle")
+    {
+
+    }
+    else if(shape == "Square")
+    {
+
+    }
+    else if(shape == "Ellipse")
+    {
+
+    }
+    else if(shape == "Circle")
+    {
+
+    }
+    else if(shape == "Text")
+    {
+
+    }
+    this->close();
+    QWidget *parent = this->parentWidget();
+    parent->show();
+    //hide();
+
 }
