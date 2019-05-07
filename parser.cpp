@@ -240,7 +240,7 @@ void parser(vector<Shape*> *ourShapes)
             polylinePoints->push_back(p3);
             polylinePoints->push_back(p4);
 
-            Shape *newPolyline = new Polyline(*polylinePoints, id, bProp);
+            Shape *newPolyline = new class Polyline(*polylinePoints, id, bProp);
             ourShapes->push_back(newPolyline);
         }
         else if(enumPos == 2)
@@ -269,7 +269,7 @@ void parser(vector<Shape*> *ourShapes)
             polygonPoints->push_back(p3);
             polygonPoints->push_back(p4);
 
-            Shape *newPolygon = new Polygon(*polygonPoints, id, fProp, bProp);
+            Shape *newPolygon = new class Polygon(*polygonPoints, id, fProp, bProp);
             ourShapes->push_back(newPolygon);
         }
         else if(enumPos == 3 )
@@ -288,9 +288,8 @@ void parser(vector<Shape*> *ourShapes)
             setBrushStyle(fProp, brushStyle);
 
             QPoint p1(d1, d2);
-            QPoint p2(d3, d4);
 
-            Shape *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
+            Shape *newRectangle = new class Rectangle(p1, d3, d4, id, fProp, bProp);
             ourShapes->push_back(newRectangle);
         }
         else if(enumPos == 4)
@@ -310,7 +309,7 @@ void parser(vector<Shape*> *ourShapes)
 
             QPoint p1(d1, d2);
 
-            Shape *newSquare = new Rectangle(p1, d3, d3, id, fProp, bProp);
+            Shape *newSquare = new class Rectangle(p1, d3, d3, id, fProp, bProp);
             ourShapes->push_back(newSquare);
         }
         else if(enumPos == 5)
@@ -329,9 +328,8 @@ void parser(vector<Shape*> *ourShapes)
             setBrushStyle(fProp, brushStyle);
 
             QPoint p1(d1, d2);
-            QPoint p2(d3, d4);
 
-            Shape *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
+            Shape *newEllipse = new class Ellipse(p1, d3, d4, id, fProp, bProp);
             ourShapes->push_back(newEllipse);
         }
         else if (enumPos == 6)
@@ -351,7 +349,7 @@ void parser(vector<Shape*> *ourShapes)
 
             QPoint p1(d1, d2);
 
-            Shape *newCircle = new Ellipse(p1, d3, d3, id, fProp, bProp);
+            Shape *newCircle = new class Ellipse(p1, d3, d3, id, fProp, bProp);
             ourShapes->push_back(newCircle);
         }
         else if(enumPos == 7)
@@ -367,8 +365,7 @@ void parser(vector<Shape*> *ourShapes)
 
             QString qTextString = QString::fromStdString(textString);
             QPoint p1(d1, d2);
-            QPoint p2(d3, d4);
-            Shape *newText = new Text(p1, p2, id, qTextString, tProp);
+            Shape *newText = new Text(p1, d3, d4, id, qTextString, tProp);
             ourShapes->push_back(newText);
         }
 		cout << endl;

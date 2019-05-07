@@ -7,7 +7,6 @@ Line::Line(const QPoint& s, const QPoint& e, unsigned int ID, borderProperties b
 
 Line::Line(const QPoint& topL, int x2, int y2, unsigned int ID, borderProperties bProps) : nonfillableShape (topL, ID, bProps)
 {
-    //start = QPoint(x1, y1); //Added this line(chris)
     end = QPoint(x2, y2);
 }
 
@@ -20,7 +19,7 @@ void Line::draw(QPainter& qpainter)
 
 QPoint Line::getStart()
 {
-    return start;
+    return topL;
 }
 
 QPoint Line::getEnd()
@@ -30,7 +29,7 @@ QPoint Line::getEnd()
 
 void Line::setStart(const QPoint& s)
 {
-    start = s;
+    topL = s;
 }
 
 void Line::setEnd(const QPoint & e)
@@ -42,7 +41,7 @@ std::string Line::toString()
 {
     std::string shapeID = std::to_string(getId());
     std::string shapeType = "Line";
-    std::string dimensions = std::to_string(start.x()) + ", " + std::to_string(start.y()) + ", " + std::to_string(end.x()) + ", " + std::to_string(end.y());
+    std::string dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(end.x()) + ", " + std::to_string(end.y());
 
     return "Shape Id: "        + shapeID     + "\r\n" +
            "ShapeType: "       + shapeType   + "\r\n" +

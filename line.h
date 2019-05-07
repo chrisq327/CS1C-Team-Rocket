@@ -18,7 +18,6 @@ public:
     void setStart(const QPoint&);
     void setEnd(const QPoint&);
 private:
-    QPoint start;
     QPoint end;
 };
 

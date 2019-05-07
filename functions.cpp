@@ -1,4 +1,4 @@
-#include "functions.h"
+/*#include "functions.h"
 #include "parser.h"
 
 void addShape(vector<Shape*> *ourShapes)
@@ -232,3 +232,4 @@ void moveShape(vector<Shape*> &ourShapes)
         }
     }
 }
+*/

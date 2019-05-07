@@ -1,9 +1,9 @@
 #include "text.h"
 
-Text::Text(const QPoint& topL, const QPoint& botR, unsigned int ID, QString& message, textProperties tProps) : Shape(topL, ID)
+Text::Text(const QPoint& topL, int w, int h, unsigned int ID, QString& message, textProperties tProps) : Shape(topL, ID)
 {
-    width = botR.x() - topL.x();
-    height = botR.y() - topL.y();
+    width = w;
+    height = h;
     if(height < 0)
     {
         height = (height*(-1));
