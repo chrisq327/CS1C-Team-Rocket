@@ -3,7 +3,7 @@
 Rectangle::Rectangle(const QPoint& topL, const QPoint& botR, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape (topL, ID, fProps, bProps)
 {
     width = botR.x() - topL.x();
-    height = botR.y() - botR.y();
+    height = botR.y() - topL.y();
 }
 
 Rectangle::Rectangle(const QPoint& topL, int w, int h, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape (topL, ID, fProps, bProps)

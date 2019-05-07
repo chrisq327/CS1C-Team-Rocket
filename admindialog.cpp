@@ -8,13 +8,14 @@
 
 vector<Shape*> *ourShapes = new vector<Shape*>;
 
+
 AdminDialog::AdminDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AdminDialog)
 {
     ui->setupUi(this);
     parser(ourShapes);
-    update();
+    //update();
 }
 
 AdminDialog::~AdminDialog()
@@ -51,6 +52,7 @@ void AdminDialog::on_pushButton_Logout_clicked()
     this->close();
     QWidget *parent = this->parentWidget();
     parent->show();
+    fileSave(ourShapes);
 }
 
 void AdminDialog::paintEvent(QPaintEvent *event)
@@ -63,9 +65,15 @@ void AdminDialog::paintEvent(QPaintEvent *event)
         drawThis->draw(painter);
     }
 
-    fileSave(ourShapes);
+
 }
 namespace adminFunc {
+
+    int getLastID()
+    {
+        int vSize = ourShapes->size();
+        int lastID = 1+((*ourShapes)[vSize-1]->getId());
+    }
     void addShape(Shape *newShape)
     {
         ourShapes->push_back(newShape);

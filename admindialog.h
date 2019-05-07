@@ -17,6 +17,7 @@ class AdminDialog;
 
 namespace adminFunc {
     void addShape(Shape *);
+    int getLastID();
 }
 
 class AdminDialog : public QDialog
