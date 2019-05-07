@@ -51,6 +51,10 @@ public:
     }
 
     ~vector() {
+        for(int i = 0; i < space; i++)
+        {
+            delete elem[i];
+        }
         delete[] elem; // destructor
     }
 

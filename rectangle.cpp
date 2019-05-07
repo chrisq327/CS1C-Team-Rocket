@@ -3,7 +3,7 @@
 Rectangle::Rectangle(const QPoint& topL, const QPoint& botR, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape (topL, ID, fProps, bProps)
 {
     width = botR.x() - topL.x();
-    height = botR.y() - botR.y();
+    height = botR.y() - topL.y();
 }
 
 Rectangle::Rectangle(const QPoint& topL, int w, int h, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape (topL, ID, fProps, bProps)
@@ -57,7 +57,7 @@ std::string Rectangle::toString()
         dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(width) + ", " + std::to_string(height);
     }
 
-    return "Shape Id: "        + shapeID     + "\r\n" +
+    return "ShapeId: "        + shapeID     + "\r\n" +
            "ShapeType: "       + shapeType   + "\r\n" +
            "ShapeDimensions: " + dimensions  + "\r\n" +
            toStringProps();

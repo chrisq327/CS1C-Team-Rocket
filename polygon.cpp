@@ -41,7 +41,7 @@ std::string Polygon::toString()
         dimensions += (i != points.size() - 1 ? ", " : "");
     }
 
-    return "Shape Id: "        + shapeID     + "\r\n" +
+    return "ShapeId: "        + shapeID     + "\r\n" +
            "ShapeType: "       + shapeType   + "\r\n" +
            "ShapeDimensions: " + dimensions  + "\r\n" +
            toStringProps();
