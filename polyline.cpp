@@ -1,6 +1,6 @@
 #include "polyline.h"
 
-Polyline::Polyline(const myStd::vector<QPoint> &p, unsigned int ID, borderProperties bProps) : nonfillableShape(p[0], ID, bProps)
+Polyline::Polyline(const std::vector<QPoint> &p, unsigned int ID, borderProperties bProps) : nonfillableShape(p[0], ID, bProps)
 {
     points = p;
 }
@@ -9,23 +9,16 @@ void Polyline::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
 
-    QPoint arrayPoints[points.size()];
-
-    for (int i=0; i<points.size(); i++)
-    {
-        arrayPoints[i] = points[i];
-    }
-
-    qpainter.drawPolyline(arrayPoints, points.size());
+    qpainter.drawPolyline(points.data(), points.size());
     qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
-myStd::vector<QPoint> Polyline::getPoints() const
+std::vector<QPoint> Polyline::getPoints() const
 {
     return points;
 }
 
-void Polyline::setPoints(const myStd::vector<QPoint> &p)
+void Polyline::setPoints(const std::vector<QPoint> &p)
 {
     points = p;
 }

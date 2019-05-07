@@ -1,6 +1,6 @@
 #include "polygon.h"
 
-Polygon::Polygon(const myStd::vector<QPoint>& p, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape(p[0], ID, fProps, bProps)
+Polygon::Polygon(const std::vector<QPoint>& p, unsigned int ID, fillProperties fProps, borderProperties bProps) : fillableShape(p[0], ID, fProps, bProps)
 {
     points = p;
 }
@@ -9,24 +9,17 @@ void Polygon::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
 
-    QPoint arrayPoints[points.size()];
-
-    for (int i=0; i<points.size(); i++)
-    {
-        arrayPoints[i] = points[i];
-    }
-
-    qpainter.drawPolygon(arrayPoints, points.size());
+    qpainter.drawPolygon(points.data(), points.size());
     qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 
 }
 
-myStd::vector<QPoint> Polygon::getPoints() const
+std::vector<QPoint> Polygon::getPoints() const
 {
     return points;
 }
 
-void Polygon::setPoints(const myStd::vector<QPoint> & p)
+void Polygon::setPoints(const std::vector<QPoint> & p)
 {
     points = p;
 }

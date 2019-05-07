@@ -7,18 +7,18 @@
 class Polygon : public fillableShape
 {
 public:
-    Polygon(const myStd::vector<QPoint>&, unsigned int, fillProperties, borderProperties);
+    Polygon(const std::vector<QPoint>&, unsigned int, fillProperties, borderProperties);
 
     void draw(QPainter&) override;
     std::string toString() override;
 
-    myStd::vector<QPoint> getPoints() const;
+    std::vector<QPoint> getPoints() const;
 
-    void setPoints(const myStd::vector<QPoint>&);
+    void setPoints(const std::vector<QPoint>&);
 
     void addPoint(const QPoint&);
 private:
-    myStd::vector<QPoint> points;
+    std::vector<QPoint> points;
 };
 
 #endif // POLYGON_H

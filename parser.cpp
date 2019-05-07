@@ -234,7 +234,7 @@ void parser(vector<Shape*> *ourShapes)
             QPoint p3(d5, d6);
             QPoint p4(d7, d8);
 
-            myStd::vector<QPoint> *polylinePoints = new myStd::vector<QPoint>;
+            std::vector<QPoint> *polylinePoints = new std::vector<QPoint>;
             polylinePoints->push_back(p1);
             polylinePoints->push_back(p2);
             polylinePoints->push_back(p3);
@@ -263,7 +263,7 @@ void parser(vector<Shape*> *ourShapes)
             QPoint p3(d5, d6);
             QPoint p4(d7, d8);
 
-            myStd::vector<QPoint> *polygonPoints = new myStd::vector<QPoint>;
+            std::vector<QPoint> *polygonPoints = new std::vector<QPoint>;
             polygonPoints->push_back(p1);
             polygonPoints->push_back(p2);
             polygonPoints->push_back(p3);
