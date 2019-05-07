@@ -20,7 +20,7 @@
 
 using namespace std;
 
-void parser(vector<Shape*> *ourShape);
+void parser(myStd::vector<Shape*> *ourShape);
 int convert(string shapeType);
 
 void setPenColor(borderProperties &bProp, string color);
@@ -37,6 +37,6 @@ void setTextFontFamily(textProperties &tProp, string textFont);
 void setTextStyle(textProperties &tProp, string textStyle);
 void setTextWeight(textProperties &tProp, string textWeight);
 
-void fileSave(vector<Shape*> *ourShapes);
+void fileSave(myStd::vector<Shape*> *ourShapes);
 
 #endif /* PARSER_H_ */

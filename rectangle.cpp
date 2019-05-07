@@ -57,7 +57,7 @@ std::string Rectangle::toString()
         dimensions = std::to_string(topL.x()) + ", " + std::to_string(topL.y()) + ", " + std::to_string(width) + ", " + std::to_string(height);
     }
 
-    return "Shape Id: "        + shapeID     + "\r\n" +
+    return "ShapeId: "        + shapeID     + "\r\n" +
            "ShapeType: "       + shapeType   + "\r\n" +
            "ShapeDimensions: " + dimensions  + "\r\n" +
            toStringProps();

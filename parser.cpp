@@ -7,7 +7,7 @@
 
 
 
-void parser(vector<Shape*> *ourShapes)
+void parser(myStd::vector<Shape*> *ourShapes)
 {
 	ifstream inFile;
 	enum ShapeType{line, polyline, polygon, rectangle, square, ellipse, circle, text};
@@ -676,7 +676,7 @@ void setTextWeight(textProperties &tProp, string textWeight)
     }
 }
 
-void fileSave(vector<Shape*> *ourShapes)
+void fileSave(myStd::vector<Shape*> *ourShapes)
 {
     ofstream outFile;
     outFile.open("outShapes.txt");

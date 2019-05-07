@@ -35,7 +35,7 @@ void GuestDialog::on_pushButton_Logout_clicked()
 void GuestDialog::paintEvent(QPaintEvent *)
 {
 
-    vector<Shape*> *ourShapes = new vector<Shape*>;
+    myStd::vector<Shape*> *ourShapes = new myStd::vector<Shape*>;
     parser(ourShapes);
     Shape *drawThis;
     QPainter painter(this);

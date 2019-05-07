@@ -164,7 +164,7 @@ std::string Text::toString()
             break;
         }
 
-        return "Shape Id: "        + shapeID        + "\n" +
+        return "ShapeId: "        + shapeID        + "\n" +
                "ShapeType: "       + shapeType      + "\n" +
                "ShapeDimensions: " + dimensions     + "\n" +
                "TextString: "      + textString     + "\n" +

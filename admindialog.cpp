@@ -6,7 +6,7 @@
 #include "parser.h"
 
 
-vector<Shape*> *ourShapes = new vector<Shape*>;
+myStd::vector<Shape*> *ourShapes = new myStd::vector<Shape*>;
 
 
 AdminDialog::AdminDialog(QWidget *parent) :
@@ -15,7 +15,7 @@ AdminDialog::AdminDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     parser(ourShapes);
-    //update();
+    update();
 }
 
 AdminDialog::~AdminDialog()
@@ -69,13 +69,28 @@ void AdminDialog::paintEvent(QPaintEvent *event)
 }
 namespace adminFunc {
 
-    int getLastID()
+int getLastID()
+{
+    int vSize = ourShapes->size();
+    int lastID = 1+((*ourShapes)[vSize-1]->getId());
+    return lastID;
+}
+
+void addShape(Shape *newShape)
+{
+    ourShapes->push_back(newShape);
+}
+
+void deleteShape(int id)
+{
+    for(int i = 0; i < ourShapes->size(); i++ )
     {
-        int vSize = ourShapes->size();
-        int lastID = 1+((*ourShapes)[vSize-1]->getId());
+        if(id == (*ourShapes)[i]->getId())
+        {
+            ourShapes->erase(&(*ourShapes)[i]);
+        }
     }
-    void addShape(Shape *newShape)
-    {
-        ourShapes->push_back(newShape);
-    }
+}
+
+
 }

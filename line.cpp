@@ -44,7 +44,7 @@ std::string Line::toString()
     std::string shapeType = "Line";
     std::string dimensions = std::to_string(start.x()) + ", " + std::to_string(start.y()) + ", " + std::to_string(end.x()) + ", " + std::to_string(end.y());
 
-    return "Shape Id: "        + shapeID     + "\r\n" +
+    return "ShapeId: "        + shapeID     + "\r\n" +
            "ShapeType: "       + shapeType   + "\r\n" +
            "ShapeDimensions: " + dimensions  + "\r\n" +
            toStringProps();
