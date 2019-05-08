@@ -31,6 +31,8 @@ Ellipse::Ellipse(const QPoint& topL, int w, int h, unsigned int ID, fillProperti
     height = h;
 }
 
+/* getters */
+
 /**
  * @brief Ellipse::getWidth returns width
  * @return the width of the rectangle encompassing the ellipse
@@ -48,6 +50,8 @@ int Ellipse::getHeight()
 {
     return height;
 }
+
+/* setters */
 
 /**
  * @brief Ellipse::setWidth sets the width of the rectangle encompassing the ellipse to a new value
@@ -71,6 +75,9 @@ void Ellipse::setHeight(int h)
  * @brief Ellipse::moveOffset offsets the shape's topL by a specified value
  * @param offSet the value of the offset
  */
+
+/* overwritten virtual functions */
+
 void Ellipse::moveOffset(QPoint& offSet)
 {
     setPosition(getPosition()+offSet);
