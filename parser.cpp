@@ -676,7 +676,7 @@ void setTextWeight(textProperties &tProp, string textWeight)
 void fileSave(myStd::vector<Shape*> *ourShapes)
 {
     ofstream outFile;
-    outFile.open("outShapes.txt");
+    outFile.open("shapes.txt");
     for(int i = 0; i < ourShapes->size(); i++)
     {
         outFile << (*ourShapes)[i]->toString();
