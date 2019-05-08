@@ -1,33 +1,66 @@
 #include "fillableshape.h"
 
+/* constructors */
+
+/**
+ * @brief fillableShape::fillableShape constructs a fillable shape
+ * @param pos the position of the top left QPoint of a shape
+ * @param ID the shape's id
+ * @param fillProperties properties of the brush
+ * @param borderProperties properties of the pen
+ */
 fillableShape::fillableShape(const QPoint& pos, unsigned int ID, fillProperties fillProperties, borderProperties borderProperties) : Shape(pos, ID)
 {
     fillProps = fillProperties;
     borderProps = borderProperties;
 }
 
+/* getters */
 
-
+/**
+ * @brief fillableShape::getFillProperties returns properties of the brush that fills the shape
+ * @return pen properties
+ */
 fillProperties fillableShape::getFillProperties()
 {
     return fillProps;
 }
 
+/**
+ * @brief fillableShape::getBorderProperties returns properties of the pen that draws the shape
+ * @return
+ */
 borderProperties fillableShape::getBorderProperties()
 {
     return borderProps;
 }
 
+/* setters */
+
+/**
+ * @brief fillableShape::setFillProperties sets properties of the brush that fills the shape
+ * @param props the properties to be set
+ */
 void fillableShape::setFillProperties(fillProperties props)
 {
     fillProps = props;
 }
 
+/**
+ * @brief fillableShape::setBorderProperties sets properties of the pen that draws the shape
+ * @param props the properties to be set
+ */
 void fillableShape::setBorderProperties(borderProperties props)
 {
     borderProps = props;
 }
 
+/* functions */
+
+/**
+ * @brief fillableShape::applyProperties applies properties of the pen and brush to the qpainter
+ * @param qpainter draws and fills the shape
+ */
 void fillableShape::applyProperties(QPainter & qpainter) const
 {
     QPen pen;
@@ -46,6 +79,10 @@ void fillableShape::applyProperties(QPainter & qpainter) const
     qpainter.setBrush(brush);
 }
 
+/**
+ * @brief fillableShape::toStringProps converts the properties of the pen and brush into a string
+ * @return the properties as a string
+ */
 std::string fillableShape::toStringProps()
 {
     std::string penColor;
