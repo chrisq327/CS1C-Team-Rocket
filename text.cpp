@@ -1,5 +1,16 @@
 #include "text.h"
 
+/* constructors */
+
+/**
+ * @brief Text::Text constructs a text
+ * @param topL the top left QPoint of the text
+ * @param w the width of the text
+ * @param h the height of the text
+ * @param ID the shape's ID
+ * @param message the text's string
+ * @param tProps the properties of the text
+ */
 Text::Text(const QPoint& topL, int w, int h, unsigned int ID, QString& message, textProperties tProps) : Shape(topL, ID)
 {
     width = w;
@@ -12,6 +23,79 @@ Text::Text(const QPoint& topL, int w, int h, unsigned int ID, QString& message, 
     textProps = tProps;
 }
 
+/* getters */
+
+/**
+ * @brief Text::getText returns the text's string
+ * @return text
+ */
+QString Text::getText() const
+{
+    return text;
+}
+
+/**
+ * @brief Text::getWidth returns the text's width
+ * @return width
+ */
+int Text::getWidth() const
+{
+    return width;
+}
+
+/**
+ * @brief Text::getHeight returns the text's height
+ * @return height
+ */
+int Text::getHeight() const
+{
+    return height;
+}
+
+/**
+ * @brief Text::getTextProps returns the text's properties
+ * @return textProps
+ */
+textProperties Text::getTextProps() const
+{
+    return textProps;
+}
+
+/* setters */
+
+/**
+ * *@brief Text::setText sets the string of the text to a new string
+ * @param newMessage the string to be set
+ */
+void Text::setText(QString& newMessage)
+{
+    text = newMessage;
+}
+
+/**
+ * @brief Text::setWidth sets the width of the text to a new value
+ * @param w the width to be set
+ */
+void Text::setWidth(int w)
+{
+    width = w;
+}
+
+/**
+ * @brief Text::setHeight sets the height of the text to a new value
+ * @param h the height to be set
+ */
+void Text::setHeight(int h)
+{
+    height = h;
+}
+
+/* functions */
+
+/**
+ * @brief Text::draw renders the text
+ * @param qpainter renders
+ */
 void Text::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);
@@ -19,6 +103,10 @@ void Text::draw(QPainter& qpainter)
     qpainter.drawText((topL.x()-10), (topL.y()-10),QString::number(getId()));
 }
 
+/**
+ * @brief Text::applyProperties applies the text properties to the qpainter
+ * @param qpainter renders
+ */
 void Text::applyProperties(QPainter& qpainter)
 {
     qpainter.setPen(textProps.textColor);
@@ -31,46 +119,19 @@ void Text::applyProperties(QPainter& qpainter)
     qpainter.setFont(font);
 }
 
-QString Text::getText() const
-{
-    return text;
-}
-
-int Text::getWidth() const
-{
-    return width;
-}
-
-int Text::getHeight() const
-{
-    return height;
-}
-
-textProperties Text::getTextProps() const
-{
-    return textProps;
-}
-
-void Text::setText(QString& newMessage)
-{
-    text = newMessage;
-}
-
-void Text::setWidth(int w)
-{
-    width = w;
-}
-
-void Text::setHeight(int h)
-{
-    height = h;
-}
-
+/**
+ * @brief Text::moveOffset offsets the shape's topL by a specified value
+ * @param offSet the value of the offset
+ */
 void Text::moveOffset(QPoint &offSet)
 {
     setPosition(getPosition()+offSet);
 }
 
+/**
+ * @brief Text::toString converts the text into an std::string
+ * @return the text as a string
+ */
 std::string Text::toString()
 {
     std::string shapeID = std::to_string(getId());
