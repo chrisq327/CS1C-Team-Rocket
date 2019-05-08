@@ -11,6 +11,7 @@ public:
 
     void draw(QPainter&) override;
     std::string toString() override;
+    void moveOffset(QPoint&) override;
 
     QPoint getStart();
     QPoint getEnd();
@@ -19,6 +20,7 @@ public:
     void setEnd(const QPoint&);
 private:
     QPoint end;
+    QString shapeType;
 };
 
 

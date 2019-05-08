@@ -66,6 +66,11 @@ void Text::setHeight(int h)
     height = h;
 }
 
+void Text::moveOffset(QPoint &offSet)
+{
+    setPosition(getPosition()+offSet);
+}
+
 std::string Text::toString()
 {
     std::string shapeID = std::to_string(getId());

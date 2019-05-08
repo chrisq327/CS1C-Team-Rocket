@@ -11,6 +11,7 @@ public:
 
     void draw(QPainter&) override;
     std::string toString() override;
+    void moveOffset(QPoint&) override;
 
     QString getText() const;
     int getWidth() const;

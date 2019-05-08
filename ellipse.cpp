@@ -32,6 +32,11 @@ void Ellipse::setHeight(int h)
     height = h;
 }
 
+void Ellipse::moveOffset(QPoint& offSet)
+{
+    setPosition(getPosition()+offSet);
+}
+
 void Ellipse::draw(QPainter& qpainter)
 {
     applyProperties(qpainter);

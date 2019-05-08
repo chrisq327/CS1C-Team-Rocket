@@ -432,11 +432,10 @@ void AddDialog::on_pushButton_addShape_clicked()
 
 
         QPoint p1(d1.toInt(), d2.toInt());
-        QPoint p2(d3.toInt(), d4.toInt());
 
         int id = adminFunc::getLastID();
 
-        Shape *newText = new Text(p1, p2, id, qTextString, tProp);
+        Shape *newText = new Text(p1, d3.toInt(), d4.toInt(), id, qTextString, tProp);
 
         adminFunc::addShape(newText);
     }

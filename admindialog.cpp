@@ -25,7 +25,6 @@ AdminDialog::~AdminDialog()
 
 void AdminDialog::on_pushButton_addShape_clicked()
 {
-    //this->hide();
     addDialog = new AddDialog(this);
     addDialog->show();
     hide();
@@ -35,7 +34,6 @@ void AdminDialog::on_pushButton_deleteShape_clicked()
 {
     deleteDialog = new DeleteDialog(this);
     deleteDialog->show();
-    hide();
 }
 
 void AdminDialog::on_pushButton_clicked()
@@ -91,6 +89,15 @@ void deleteShape(int id)
         }
     }
 }
-
-
+void moveShape(int id, const int d1, const int d2)
+{
+    for(int i = 0; i < ourShapes->size(); i++ )
+    {
+        if(id == (*ourShapes)[i]->getId())
+        {
+                QPoint offSet(d1, d2);
+                (*ourShapes)[i]->moveOffset(offSet);
+        }
+    }
+}
 }

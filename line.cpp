@@ -37,6 +37,12 @@ void Line::setEnd(const QPoint & e)
     end = e;
 }
 
+void Line::moveOffset(QPoint & offSet)
+{
+    setPosition(getStart()+offSet);
+    end = end+offSet;
+}
+
 std::string Line::toString()
 {
     std::string shapeID = std::to_string(getId());

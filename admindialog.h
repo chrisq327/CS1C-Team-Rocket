@@ -19,6 +19,7 @@ namespace adminFunc {
     void addShape(Shape *);
     int getLastID();
     void deleteShape(int id);
+    void moveShape(int id, const int, const int);
 }
 
 class AdminDialog : public QDialog

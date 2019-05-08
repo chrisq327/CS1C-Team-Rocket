@@ -28,6 +28,15 @@ void Polyline::addPoint(const QPoint & newPoint)
     points.push_back(newPoint);
 }
 
+void Polyline::moveOffset(QPoint & offSet)
+{
+    for(int i = 0; i < points.size(); i++)
+    {
+        points[i] = (points[i]+offSet);
+    }
+    setPosition(points[0]);
+}
+
 std::string Polyline::toString()
 {
     std::string shapeID = std::to_string(getId());

@@ -21,4 +21,5 @@ void DeleteDialog::on_pushButton_delete_clicked()
     QString delID = ui->lineEdit_shapeId->text();
     adminFunc::deleteShape(delID.toInt());
     parent->show();
+    parent->update();
 }

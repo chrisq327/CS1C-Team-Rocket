@@ -39,6 +39,11 @@ void Rectangle::setHeight(int h)
     height = h;
 }
 
+void Rectangle::moveOffset(QPoint &offSet)
+{
+    setPosition(getPosition()+offSet);
+}
+
 std::string Rectangle::toString()
 {
     std::string shapeID = std::to_string(getId());

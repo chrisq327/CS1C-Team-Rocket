@@ -21,6 +21,7 @@ protected:
 public:
     virtual void draw(QPainter&) = 0;
     virtual std::string toString() = 0;
+    virtual void moveOffset(QPoint&) = 0;
 
     virtual ~Shape();
 

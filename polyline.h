@@ -12,6 +12,7 @@ public:
 
     void draw(QPainter&) override;
     std::string toString() override;
+    void moveOffset(QPoint&) override;
 
     std::vector<QPoint> getPoints() const;
 

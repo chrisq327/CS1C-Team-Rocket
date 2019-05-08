@@ -29,6 +29,15 @@ void Polygon::addPoint(const QPoint& newPoint)
     points.push_back(newPoint);
 }
 
+void Polygon::moveOffset(QPoint & offSet)
+{
+    for(int i = 0; i < points.size(); i++)
+    {
+        points[i] = (points[i]+offSet);
+    }
+    setPosition(points[0]);
+}
+
 std::string Polygon::toString()
 {
     std::string shapeID = std::to_string(getId());
