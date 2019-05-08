@@ -3,7 +3,7 @@
 
 #include "fillableshape.h"
 
-class Ellipse : public fillableShape //determine box that ellipse lies in, then call drawEllipse
+class Ellipse : public fillableShape // a circle is an ellipse with the same width and height
 {
 public:
     Ellipse(const QPoint&, const QPoint&, unsigned int, fillProperties, borderProperties);
