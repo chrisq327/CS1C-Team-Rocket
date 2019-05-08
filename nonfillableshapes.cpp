@@ -1,21 +1,47 @@
 #include "nonfillableshape.h"
 #include "properties.h"
 
+/* constructors */
+
+/**
+ * @brief nonfillableShape::nonfillableShape constructs a shape that cannot be filled
+ * @param pos the top left QPoint of the shape
+ * @param ID the shape's ID
+ * @param borderProperties the properties of the pen that draws the shape
+ */
 nonfillableShape::nonfillableShape(const QPoint& pos, unsigned int ID, borderProperties borderProperties) : Shape(pos, ID)
 {
     borderProps = borderProperties;
 }
 
+/* getters */
+
+/**
+ * @brief nonfillableShape::getBorderProperties returns the properties of the pen that draws the shape
+ * @return the properties
+ */
 borderProperties nonfillableShape::getBorderProperties() const
 {
     return borderProps;
 }
 
+/* setters */
+
+/**
+ * @brief nonfillableShape::setBorderProperties sets the properties of the pen that draws the shape
+ * @param props the properties to be set
+ */
 void nonfillableShape::setBorderProperties(borderProperties props)
 {
     borderProps = props;
 }
 
+/* functions */
+
+/**
+ * @brief nonfillableShape::applyProperties applies the properties of the pen to the qpainter
+ * @param qpainter has it's pen set
+ */
 void nonfillableShape::applyProperties(QPainter & qpainter) const
 {
     QPen pen;
@@ -28,6 +54,10 @@ void nonfillableShape::applyProperties(QPainter & qpainter) const
     qpainter.setPen(pen);
 }
 
+/**
+ * @brief nonfillableShape::toStringProps converts the properties of the pen into a string
+ * @return the string
+ */
 std::string nonfillableShape::toStringProps()
 {
     std::string penColor;
