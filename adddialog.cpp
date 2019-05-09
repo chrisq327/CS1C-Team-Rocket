@@ -189,7 +189,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newPolyline = new Polyline(*polylinePoints, id, bProp);
+        Shape *newPolyline = new class Polyline(*polylinePoints, id, bProp);
         adminFunc::addShape(newPolyline);
     }
     else if(shape == "Polygon")
@@ -241,7 +241,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newPolygon = new Polygon(*polygonPoints, id, fProp, bProp);
+        Shape *newPolygon = new class Polygon(*polygonPoints, id, fProp, bProp);
         adminFunc::addShape(newPolygon);
     }
     else if(shape == "Rectangle")
@@ -281,7 +281,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newRectangle = new Rectangle(p1, p2, id, fProp, bProp);
+        Shape *newRectangle = new class Rectangle(p1, p2, id, fProp, bProp);
         adminFunc::addShape(newRectangle);
     }
     else if(shape == "Square")
@@ -320,7 +320,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newSquare = new Rectangle(p1, d3.toInt(), d3.toInt(), id, fProp, bProp);
+        Shape *newSquare = new class Rectangle(p1, d3.toInt(), d3.toInt(), id, fProp, bProp);
         adminFunc::addShape(newSquare);
     }
     else if(shape == "Ellipse")
@@ -360,7 +360,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newEllipse = new Ellipse(p1, p2, id, fProp, bProp);
+        Shape *newEllipse = new class Ellipse(p1, p2, id, fProp, bProp);
         adminFunc::addShape(newEllipse);
     }
     else if(shape == "Circle")
@@ -398,7 +398,7 @@ void AddDialog::on_pushButton_addShape_clicked()
 
         int id = adminFunc::getLastID();
 
-        Shape *newCircle = new Ellipse(p1, d3.toInt(), d3.toInt(), id, fProp, bProp);
+        Shape *newCircle = new class Ellipse(p1, d3.toInt(), d3.toInt(), id, fProp, bProp);
         adminFunc::addShape(newCircle);
     }
     else if(shape == "Text")
