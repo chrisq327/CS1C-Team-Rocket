@@ -39,7 +39,7 @@ private slots:
 
     void on_pushButton_deleteShape_clicked();
 
-    void on_pushButton_clicked();
+    void on_pushButton_moveShape_clicked();
 
     void on_pushButton_testimonials_clicked();
 

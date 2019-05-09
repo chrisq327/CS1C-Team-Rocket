@@ -36,7 +36,7 @@ void AdminDialog::on_pushButton_deleteShape_clicked()
     deleteDialog->show();
 }
 
-void AdminDialog::on_pushButton_clicked()
+void AdminDialog::on_pushButton_moveShape_clicked()
 {
     moveDialog = new MoveDialog(this);
     moveDialog->show();
