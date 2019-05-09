@@ -39,3 +39,9 @@ void MainWindow::on_pushButton_Login_clicked()
     }
 }
 
+void MainWindow::on_pushButton_contact_clicked()
+{
+    hide();
+    contactDialog = new ContactDialog(this);
+    contactDialog->show();
+}

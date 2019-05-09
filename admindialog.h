@@ -10,6 +10,7 @@
 #include "deletedialog.h"
 #include "movedialog.h"
 #include "shape.h"
+#include "testimonialsdialog.h"
 
 namespace Ui {
 class AdminDialog;
@@ -38,12 +39,15 @@ private slots:
 
     void on_pushButton_deleteShape_clicked();
 
-    void on_pushButton_clicked();
+    void on_pushButton_moveShape_clicked();
+
+    void on_pushButton_testimonials_clicked();
 
 private:
     AddDialog *addDialog;
     DeleteDialog *deleteDialog;
     MoveDialog *moveDialog;
+    TestimonialsDialog *testimonialsDialog;
     Ui::AdminDialog *ui;
 
 protected:

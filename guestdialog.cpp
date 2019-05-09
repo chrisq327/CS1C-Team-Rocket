@@ -49,3 +49,8 @@ void GuestDialog::paintEvent(QPaintEvent *)
 
 }
 
+void GuestDialog::on_pushButton_testimonials_clicked()
+{
+    testimonialsDialog = new TestimonialsDialog(this);
+    testimonialsDialog->show();
+}
