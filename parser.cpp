@@ -3,6 +3,11 @@
 
 /*  Functions */
 
+
+/**
+ * @brief Parser function to read in shapes from the file shapes.txt
+ * @param ourShapes a pointer to a vector of pointers that derive from the shape class
+ */
 void parser(myStd::vector<Shape*> *ourShapes)
 {
 	ifstream inFile;
@@ -370,7 +375,11 @@ void parser(myStd::vector<Shape*> *ourShapes)
 }
 
 
-
+/**
+ * @brief Convert function converts shapeType to a number for the enum
+ * @param s shapeType string
+ * @return number for enum shape type
+ */
 int convert(string s)
 {
 
@@ -392,7 +401,11 @@ int convert(string s)
 		return 7;
 }
 
-
+/**
+ * @brief setPenColor converts the string color to change the pen color in borderProperties
+ * @param bProp borderProperties holds the properties for borders
+ * @param penColor string that is the color of the pen
+ */
 void setPenColor(borderProperties &bProp, string penColor)
 {
     if(penColor == "white")
@@ -433,6 +446,12 @@ void setPenColor(borderProperties &bProp, string penColor)
     }
 
 }
+
+/**
+ * @brief setPenStyle converts the string style to change the pen style in borderProperties
+ * @param bProp borderProperties holds the properties for borders
+ * @param penStyle string that is the style of the pen
+ */
 void setPenStyle(borderProperties &bProp, string penStyle)
 {
     if(penStyle == "NoPen")
@@ -461,6 +480,12 @@ void setPenStyle(borderProperties &bProp, string penStyle)
     }
 
 }
+
+/**
+ * @brief setPenCapStyle converts the string cap to change the pen cap style in borderProperties
+ * @param bProp borderProperties holds the properties for borders
+ * @param penCap string that is the cap style of pen
+ */
 void setPenCapStyle(borderProperties &bProp, string penCap)
 {
     if(penCap == "FlatCap")
@@ -478,6 +503,12 @@ void setPenCapStyle(borderProperties &bProp, string penCap)
 
 
 }
+
+/**
+ * @brief setPenJoinStlye converts the string join style to change the pen join stlye in borderProperties
+ * @param bProp borderProperties holds the properties for borders
+ * @param joinStyle string that is the join style of the pen
+ */
 void setPenJoinStlye(borderProperties &bProp, string joinStyle)
 {
     if(joinStyle == "MiterJoin")
@@ -494,6 +525,11 @@ void setPenJoinStlye(borderProperties &bProp, string joinStyle)
     }
 }
 
+/**
+ * @brief setBrushColor converst the string brush color to change the brush color in fillProperties
+ * @param fProp fillProperties holds the properties for filling shapes
+ * @param brushColor string that is the color of the brush
+ */
 void setBrushColor(fillProperties &fProp, string brushColor)
 {
     if(brushColor == "white")
@@ -533,6 +569,12 @@ void setBrushColor(fillProperties &fProp, string brushColor)
         fProp.brushColor = Qt::GlobalColor::black;
     }
 }
+
+/**
+ * @brief setBrushStyle converts the string brush style to change the brush style in fillProperites
+ * @param fProp fillProperties holds the properties for filling shapes
+ * @param brushStyle string that is the brush style
+ */
 void setBrushStyle(fillProperties &fProp, string brushStyle)
 {
     if(brushStyle == "SolidPattern")
@@ -553,6 +595,11 @@ void setBrushStyle(fillProperties &fProp, string brushStyle)
     }
 }
 
+/**
+ * @brief setTextColor converts the string text color to change the color of changes in textproperties
+ * @param tProp textProperties holds the properties for text
+ * @param textColor string that is the color of the text
+ */
 void setTextColor(textProperties &tProp, string textColor)
 {
     if(textColor == "white")
@@ -592,6 +639,12 @@ void setTextColor(textProperties &tProp, string textColor)
         tProp.textColor = Qt::GlobalColor::black;
     }
 }
+
+/**
+ * @brief setTextAlignment convert the string text align to change the text alignment in textProperties
+ * @param tProp textProperties holds the properties for text
+ * @param textAlign string that is the text alignment
+ */
 void setTextAlignment(textProperties &tProp, string textAlign)
 {
     if(textAlign == "AlignLeft")
@@ -615,6 +668,12 @@ void setTextAlignment(textProperties &tProp, string textAlign)
         tProp.textAlignment = Qt::AlignmentFlag::AlignCenter;
     }
 }
+
+/**
+ * @brief setTextFontFamily converts the string text font family to change the font family in textProperties
+ * @param tProp textProperties holds the properties for text
+ * @param textFont string that is the text font family.
+ */
 void setTextFontFamily(textProperties &tProp, string textFont)
 {
     if(textFont == "Comic Sans MS")
@@ -634,6 +693,12 @@ void setTextFontFamily(textProperties &tProp, string textFont)
         tProp.textFontFamily = "Times New Roman";
     }
 }
+
+/**
+ * @brief setTextStyle converts the string to change the font style in textProperties
+ * @param tProp textProperties holds the properties for text
+ * @param textStyle string that is the text style
+ */
 void setTextStyle(textProperties &tProp, string textStyle)
 {
     if(textStyle == "StyleNormal")
@@ -649,6 +714,12 @@ void setTextStyle(textProperties &tProp, string textStyle)
         tProp.textFontStyle = QFont::Style::StyleOblique;
     }
 }
+
+/**
+ * @brief setTextWeight converts the string text weight to change the text weight in textProperites
+ * @param tProp textProperties holds the properties for text
+ * @param textWeight string that is the text weight
+ */
 void setTextWeight(textProperties &tProp, string textWeight)
 {
     if(textWeight == "Thin")
@@ -669,6 +740,10 @@ void setTextWeight(textProperties &tProp, string textWeight)
     }
 }
 
+/**
+ * @brief fileSave out puts the vector of pointers of shapes to save it into the original text file
+ * @param ourShapes pointer to a vector of pointers of shapes that derive from the shape base class
+ */
 void fileSave(myStd::vector<Shape*> *ourShapes)
 {
     ofstream outFile;

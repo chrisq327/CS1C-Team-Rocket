@@ -67,8 +67,12 @@ void AdminDialog::paintEvent(QPaintEvent *event)
 }
 
 /* functions */
-namespace adminFunc {
 
+namespace adminFunc {
+/**
+ * @brief getLastID returns id of the highest shape
+ * @return highest id
+ */
 int getLastID()
 {
     int vSize = ourShapes->size();
@@ -76,11 +80,19 @@ int getLastID()
     return lastID;
 }
 
+/**
+ * @brief addShape adds a pointer to a shape into the vector of shape pointers
+ * @param newShape pointer to new shape to be added to vector
+ */
 void addShape(Shape *newShape)
 {
     ourShapes->push_back(newShape);
 }
 
+/**
+ * @brief deleteShape deletes the shape with the corresponding ID
+ * @param id id of the shape to be deleted
+ */
 void deleteShape(int id)
 {
     for(int i = 0; i < ourShapes->size(); i++ )
@@ -92,6 +104,12 @@ void deleteShape(int id)
         }
     }
 }
+/**
+ * @brief moveShape moves by offsetting the x and y axis
+ * @param id id of the shape to be moved
+ * @param d1 amount of change to x axis
+ * @param d2 amount of change to the y axis
+ */
 void moveShape(int id, const int d1, const int d2)
 {
     for(int i = 0; i < ourShapes->size(); i++ )
