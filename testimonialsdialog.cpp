@@ -1,6 +1,8 @@
 #include "testimonialsdialog.h"
 #include "ui_testimonialsdialog.h"
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 #include <parser.h>
 
 TestimonialsDialog::TestimonialsDialog(QWidget *parent) :
@@ -8,6 +10,14 @@ TestimonialsDialog::TestimonialsDialog(QWidget *parent) :
     ui(new Ui::TestimonialsDialog)
 {
     ui->setupUi(this);
+
+   QFile inFile("testimonial.txt");
+   QTextStream in(&inFile);
+   inFile.open(QIODevice::ReadOnly);
+   ui->textBrowser_testimonials->setText(in.readAll());
+
+   QLabel *label = new QLabel;
+   label->setText("testing");
 }
 
 TestimonialsDialog::~TestimonialsDialog()

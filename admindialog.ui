@@ -78,6 +78,19 @@
     <string>Testimonials</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>450</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Give us feedback here! -&gt;</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
