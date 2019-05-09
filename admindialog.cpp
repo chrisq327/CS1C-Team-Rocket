@@ -65,6 +65,8 @@ void AdminDialog::paintEvent(QPaintEvent *event)
 
 
 }
+
+/* functions */
 namespace adminFunc {
 
 int getLastID()
@@ -85,6 +87,7 @@ void deleteShape(int id)
     {
         if(id == (*ourShapes)[i]->getId())
         {
+            delete (*ourShapes)[i];
             ourShapes->erase(&(*ourShapes)[i]);
         }
     }

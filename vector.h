@@ -2,9 +2,8 @@
 #define VECTOR_H_
 
 #include "iostream"
-#include "QPoint"
 #include <algorithm> // std::copy
-#include "shape.h"
+
 
 using std::copy;
 using namespace std;
@@ -51,7 +50,7 @@ public:
     }
 
     ~vector() {
-        for(int i = 0; i < space; i++)
+        for(int i = 0; i < size_v; i++)
         {
             delete elem[i];
         }
@@ -98,18 +97,18 @@ public:
     void reserve(int newalloc)
     {
         // never decrease allocation
-    	if(!(newalloc<size_v))
-    	{
+        if(!(newalloc<size_v))
+        {
         // allocate new space
-			T *temp = new T[newalloc];
-			for(int i = 0; i < size_v; i++)
-			{
-				temp[i] = elem[i];
-			}
-			delete [] elem;
-			elem = temp;
-			space = newalloc;
-    	}
+            T *temp = new T[newalloc];
+            for(int i = 0; i < size_v; i++)
+            {
+                temp[i] = elem[i];
+            }
+            delete [] elem;
+            elem = temp;
+            space = newalloc;
+        }
         // copy old elements
         // deallocate old space
     }
@@ -150,16 +149,16 @@ public:
         // make sure we have space
         int index = p - begin();
         if(!(size_v == space))
-    	{
+        {
             reserve(size() == 0 ? 8 : 2* size());
-    	}
+        }
 
         iterator pp = begin() + index;
         for (iterator pos = end()-1; pos != pp-1; --pos)
-				*(pos + 1) = *pos;
+                *(pos + 1) = *pos;
 
         *(begin()+index) = val;
-		size_v++;
+        size_v++;
 
         // the place to put value
 
@@ -174,12 +173,11 @@ public:
             return p;
         for (iterator pos = p + 1; pos != end(); ++pos)
             *(pos - 1) = *pos; // copy element one position to the left
-        //delete (end() - 1);
+       // delete (end() - 1);
         --size_v;
         return p;
     }
 };
 }
-
 
 #endif /* VECTOR_H_ */

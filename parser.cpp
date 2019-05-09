@@ -1,11 +1,7 @@
-
-
-//using namespace myStd;
-
 #include "parser.h"
 
 
-
+/*  Functions */
 
 void parser(myStd::vector<Shape*> *ourShapes)
 {
