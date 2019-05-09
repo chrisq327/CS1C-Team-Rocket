@@ -31,4 +31,5 @@ void MoveDialog::on_pushButton_move_clicked()
     this->close();
     QWidget *parent = this->parentWidget();
     parent->show();
+    parent->update();
 }
