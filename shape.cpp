@@ -55,7 +55,7 @@ void Shape::setPosition(const QPoint& point)
  * @param rhs the other shape being compared to
  * @return true if shapes are the same
  */
-boolean Shape::operator==(Shape &rhs)
+bool Shape::operator==(Shape &rhs)
 {
     return id == rhs.id;
 }
@@ -65,7 +65,7 @@ boolean Shape::operator==(Shape &rhs)
  * @param rhs the otehr shape being compared to
  * @return true if shapes are not the same
  */
-boolean Shape::operator!=(Shape &rhs)
+bool Shape::operator!=(Shape &rhs)
 {
     return id != rhs.id;
 }

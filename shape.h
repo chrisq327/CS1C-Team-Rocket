@@ -32,8 +32,8 @@ public:
 
     void setPosition(const QPoint&);
 
-    boolean operator==(Shape& rhs);
-    boolean operator!=(Shape& rhs);
+    bool operator==(Shape& rhs);
+    bool operator!=(Shape& rhs);
 };
 
 
