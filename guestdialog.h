@@ -9,6 +9,7 @@
 #include "shape.h"
 #include "line.h"
 #include "nonfillableshape.h"
+#include "testimonialsdialog.h"
 
 namespace Ui {
 class GuestDialog;
@@ -25,7 +26,10 @@ public:
 private slots:
     void on_pushButton_Logout_clicked();
 
+    void on_pushButton_testimonials_clicked();
+
 private:
+    TestimonialsDialog *testimonialsDialog;
     Ui::GuestDialog *ui;
 
 protected:

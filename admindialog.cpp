@@ -101,3 +101,10 @@ void moveShape(int id, const int d1, const int d2)
     }
 }
 }
+
+void AdminDialog::on_pushButton_testimonials_clicked()
+{
+    hide();
+    testimonialsDialog = new TestimonialsDialog(this);
+    testimonialsDialog->show();
+}

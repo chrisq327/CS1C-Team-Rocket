@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "guestdialog.h"
 #include "admindialog.h"
+#include "contactdialog.h"
 #include "vector.h"
 #include "shape.h"
 
@@ -25,9 +26,12 @@ public:
 private slots:
     void on_pushButton_Login_clicked();
 
+    void on_pushButton_contact_clicked();
+
 private:
     GuestDialog *guestDialog;
     AdminDialog *adminDialog;
+    ContactDialog *contactDialog;
     Ui::MainWindow *ui;
 };
 

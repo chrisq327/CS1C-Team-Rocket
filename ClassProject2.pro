@@ -42,7 +42,9 @@ SOURCES += \
     text.cpp \
     adddialog.cpp \
     deletedialog.cpp \
-    movedialog.cpp
+    movedialog.cpp \
+    contactdialog.cpp \
+    testimonialsdialog.cpp
 
 HEADERS += \
     ellipse.h \
@@ -63,7 +65,9 @@ HEADERS += \
     guestdialog.h \
     adddialog.h \
     deletedialog.h \
-    movedialog.h
+    movedialog.h \
+    contactdialog.h \
+    testimonialsdialog.h
 
 FORMS += \
         mainwindow.ui \
@@ -71,7 +75,9 @@ FORMS += \
     admindialog.ui \
     adddialog.ui \
     deletedialog.ui \
-    movedialog.ui
+    movedialog.ui \
+    contactdialog.ui \
+    testimonialsdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
