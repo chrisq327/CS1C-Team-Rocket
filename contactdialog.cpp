@@ -1,6 +1,7 @@
 #include "contactdialog.h"
 #include "ui_contactdialog.h"
 #include <QMessageBox>
+#include <QPixmap>
 
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
