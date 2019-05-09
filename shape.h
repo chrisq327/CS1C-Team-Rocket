@@ -31,6 +31,9 @@ public:
     unsigned int getId() const;
 
     void setPosition(const QPoint&);
+
+    boolean operator==(Shape& rhs);
+    boolean operator!=(Shape& rhs);
 };
 
 
