@@ -3,7 +3,7 @@
 
 #include "fillableshape.h"
 
-class Rectangle : public fillableShape
+class Rectangle : public fillableShape //a square is a rectangle
 {
 public:
     Rectangle(const QPoint&, const QPoint&, unsigned int, fillProperties, borderProperties);

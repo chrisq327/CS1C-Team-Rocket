@@ -20,7 +20,7 @@ public:
 
     void addPoint(const QPoint&);
 private:
-    std::vector<QPoint> points;
+    std::vector<QPoint> points; //used an std::vector because using myStd::vector created several issues and segfaults
 };
 
 #endif // POLYLINE_H
