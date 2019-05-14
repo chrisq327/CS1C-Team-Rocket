@@ -1,5 +1,8 @@
 #include "parser.h"
 
+/*! @file parser.cpp
+ *  @verbinclude parser.cpp
+ */
 
 /*  Functions */
 
