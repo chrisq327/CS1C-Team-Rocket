@@ -138,8 +138,6 @@ void AddDialog::on_pushButton_addShape_clicked()
         setPenCapStyle(bProp, penCapStyle.toStdString());
         setPenJoinStlye(bProp, penJoinStyle.toStdString());
 
-
-
         QPoint p1(d1.toInt(), d2.toInt());
         QPoint p2(d3.toInt(), d4.toInt());
 
@@ -441,5 +439,6 @@ void AddDialog::on_pushButton_addShape_clicked()
     }
     this->close();
     QWidget *parent = this->parentWidget();
+    parent->update();
     parent->show();
 }
