@@ -27,7 +27,6 @@ void AdminDialog::on_pushButton_addShape_clicked()
 {
     addDialog = new AddDialog(this);
     addDialog->show();
-    hide();
 }
 
 void AdminDialog::on_pushButton_deleteShape_clicked()

@@ -1,5 +1,8 @@
 #include "parser.h"
 
+/*! @file parser.cpp
+ *  @verbinclude parser.cpp
+ */
 
 /*  Functions */
 
@@ -442,7 +445,7 @@ void setPenColor(borderProperties &bProp, string penColor)
     }
     else if(penColor == "gray")
     {
-        bProp.penColor = Qt::GlobalColor::black;
+        bProp.penColor = Qt::GlobalColor::gray;
     }
 
 }
@@ -566,7 +569,7 @@ void setBrushColor(fillProperties &fProp, string brushColor)
     }
     else if(brushColor == "gray")
     {
-        fProp.brushColor = Qt::GlobalColor::black;
+        fProp.brushColor = Qt::GlobalColor::gray;
     }
 }
 
@@ -636,7 +639,7 @@ void setTextColor(textProperties &tProp, string textColor)
     }
     else if(textColor == "gray")
     {
-        tProp.textColor = Qt::GlobalColor::black;
+        tProp.textColor = Qt::GlobalColor::gray;
     }
 }
 
